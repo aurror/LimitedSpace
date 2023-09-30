@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    private int damage = 10;
     private bool hasHit = false;
     public bool destroyAfterTime = true;
     void Start()
     {
         if (destroyAfterTime){
+            this.GetComponent<CapsuleCollider2D>().enabled = true;
             StartCoroutine(DestroyAfterTime(5f));
         }
         
@@ -19,6 +21,7 @@ public class ProjectileController : MonoBehaviour
         // Optional: Destroy immediately on hit
         if (collision.gameObject.CompareTag("Enemy")){
             Destroy(gameObject);
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
         } else {
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
         }
