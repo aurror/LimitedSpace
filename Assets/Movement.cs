@@ -16,10 +16,13 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-         float horizontal = Input.GetAxisRaw("Horizontal");
+        float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
         Vector2 direction = new Vector2(horizontal, vertical).normalized;
+
+        if (horizontal < 0f) { transform.localScale = new Vector2(-1f, 1f); }
+        if (horizontal > 0f) { transform.localScale = new Vector2(1f, 1f); }
         
         Vector2 velocity = direction * speed;
         rb.velocity = velocity;
