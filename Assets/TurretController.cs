@@ -15,8 +15,8 @@ public class TurretController : MonoBehaviour
         if (closestEnemy != null)
         {
             Vector3 directionToEnemy = closestEnemy.transform.position - transform.position;
-            float angle = Mathf.Atan2(directionToEnemy.y, directionToEnemy.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+            float angle = Mathf.Atan2(directionToEnemy.z, directionToEnemy.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, angle, 0);
         }
     }
 
