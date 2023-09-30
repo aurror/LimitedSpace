@@ -36,8 +36,9 @@ public class TractorBeamCollector : MonoBehaviour
                 if (Vector3.Distance(collider.transform.position, transform.position) < 0.1f)
                 {
                     // Destroy the resource
+
+                    ContainerManager.instance.GetNewResourceInContainer(collider.gameObject.GetComponent<FloatingResource>().resourceType.ToString(),1);
                     Destroy(collider.gameObject);
-                    ContainerManager.instance.GetNewResourceInContainer(gameObject.GetComponent<FloatingResource>().resourceType.ToString(),1);
                 }
             }
         }
