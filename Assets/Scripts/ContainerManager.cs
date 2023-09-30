@@ -76,7 +76,6 @@ public class ContainerManager : MonoBehaviour
 
     public void GetNewResourceInContainer(string newRessource, int newAmount)
     {
-        Debug.Log(newRessource);
         if (canAddResourceToContainer)
         {
             foreach(Resource res in resourcesList)
