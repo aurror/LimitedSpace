@@ -44,6 +44,11 @@ public class ContainerManager : MonoBehaviour
             GetNewResourceInContainer("Iron", 1);
         if (Input.GetKeyDown(KeyCode.R))
             GetNewResourceInContainer("Water", 1);
+        if (Input.GetKeyDown(KeyCode.I))
+            GetNewResourceInContainer("Organic", 1);
+  
+        if (Input.GetKeyDown(KeyCode.U))
+            GetNewResourceInContainer("Cabel", 1);
         if (Input.GetKeyDown(KeyCode.X))
         {
             LooseItemAsPlayer("Iron", 1);
@@ -71,10 +76,12 @@ public class ContainerManager : MonoBehaviour
 
     public void GetNewResourceInContainer(string newRessource, int newAmount)
     {
+        Debug.Log(newRessource);
         if (canAddResourceToContainer)
         {
             foreach(Resource res in resourcesList)
             {
+
                 if(res.resourceName == newRessource)
                 {
                     res.amount += newAmount;
