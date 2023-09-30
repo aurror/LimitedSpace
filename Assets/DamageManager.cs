@@ -10,7 +10,11 @@ public class DamageManager : MonoBehaviour
     [SerializeField] private string currentEvent;
 
     public static DamageManager instance;
-
+      public GameObject explosionPrefab;
+    void Start()
+    {
+        explosionPrefab = Resources.Load<GameObject>("Explosion");
+    }
     private void Awake()
     {
         instance = this;
@@ -30,6 +34,8 @@ public class DamageManager : MonoBehaviour
 
                 randomGameObject.GetComponent<FloatingHealthBar>().GetDamage(5);
                 if(collision.gameObject.tag == "Enemy")
+                    // Instantiate the explosion prefab at the asteroid's position and rotation
+                    Instantiate(explosionPrefab, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
                      Destroy(collision.gameObject);
             }
 
