@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eac80d3b10e99ca49a3bbca70b2d4f3e
+guid: 6123f3b5f6ecbeb4e86da0fa4ff14dc6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Astraunaut - idleAnimation_0
+      name: Astraunaut - walkSideAnimation_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77ff649eb89b3d74982ff9472d801fa6
-      internalID: -1348107097
+      spriteID: 443aaa62f67fa394a9c6f4e8c26f8ed0
+      internalID: -209844947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astraunaut - idleAnimation_1
+      name: Astraunaut - walkSideAnimation_1
       rect:
         serializedVersion: 2
         x: 16
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 792e563a2d2cef146b9d9e563f084f90
-      internalID: -1992689660
+      spriteID: 97fcb50744c560c4c9d2685c5bd6829d
+      internalID: 398230408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astraunaut - idleAnimation_2
+      name: Astraunaut - walkSideAnimation_2
       rect:
         serializedVersion: 2
         x: 32
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd23f1d54cc895d45ad7aaa3f40065e0
-      internalID: -1427663623
+      spriteID: 8d3d56992d7f8cc47a90687d299e1081
+      internalID: -696647213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astraunaut - idleAnimation_3
+      name: Astraunaut - walkSideAnimation_3
       rect:
         serializedVersion: 2
         x: 48
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c155260d6fbd5834f9ff5e1839bb9886
-      internalID: 164671226
+      spriteID: 96e82cee7ddf8d64fb0537fa44992b32
+      internalID: 879704741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astraunaut - idleAnimation_4
+      name: Astraunaut - walkSideAnimation_4
       rect:
         serializedVersion: 2
         x: 64
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9d1cd05b9081114fb770c186c66be92
-      internalID: 1931849097
+      spriteID: fd516194b7197ae43a03a2b8daf74825
+      internalID: -784964094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astraunaut - idleAnimation_5
+      name: Astraunaut - walkSideAnimation_5
       rect:
         serializedVersion: 2
         x: 80
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cd32989d9fb4364ea744cba2454a520
-      internalID: -817162509
+      spriteID: 7231ce3c42280ad4c967348cdcd11a4a
+      internalID: 1636758222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astraunaut - idleAnimation_6
+      name: Astraunaut - walkSideAnimation_6
       rect:
         serializedVersion: 2
         x: 96
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d071e472e9b6bc249a29ac1520aefc57
-      internalID: -602739976
+      spriteID: 09a01686ef7fdf842a1481c1f157aaa9
+      internalID: -821894917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astraunaut - idleAnimation_7
+      name: Astraunaut - walkSideAnimation_7
       rect:
         serializedVersion: 2
         x: 112
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 597ff126cbf410d46ad36b9e26ddfc63
-      internalID: -1919256639
+      spriteID: 26c5de9ce1606bf4886e0422b43aba9a
+      internalID: -2075296729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astraunaut - idleAnimation_8
+      name: Astraunaut - walkSideAnimation_8
       rect:
         serializedVersion: 2
         x: 128
@@ -292,71 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81b612794f141774c95b636cc00ca963
-      internalID: 352928204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Astraunaut - idleAnimation_9
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0606a78ba7bc0b41b40a976b0341a0a
-      internalID: 783028142
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Astraunaut - idleAnimation_10
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05a4fdf08f6f9924194936bffedde9ee
-      internalID: 492942570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Astraunaut - idleAnimation_11
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af3b979272078c9469c3b9b151f0947e
-      internalID: -1058452146
+      spriteID: 9226622920b4ba84f840be7c7b54154d
+      internalID: -1648383005
       vertices: []
       indices: 
       edges: []
@@ -372,18 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Astraunaut - idleAnimation_0: -1348107097
-      Astraunaut - idleAnimation_1: -1992689660
-      Astraunaut - idleAnimation_10: 492942570
-      Astraunaut - idleAnimation_11: -1058452146
-      Astraunaut - idleAnimation_2: -1427663623
-      Astraunaut - idleAnimation_3: 164671226
-      Astraunaut - idleAnimation_4: 1931849097
-      Astraunaut - idleAnimation_5: -817162509
-      Astraunaut - idleAnimation_6: -602739976
-      Astraunaut - idleAnimation_7: -1919256639
-      Astraunaut - idleAnimation_8: 352928204
-      Astraunaut - idleAnimation_9: 783028142
+      Astraunaut - walkSideAnimation_0: -209844947
+      Astraunaut - walkSideAnimation_1: 398230408
+      Astraunaut - walkSideAnimation_2: -696647213
+      Astraunaut - walkSideAnimation_3: 879704741
+      Astraunaut - walkSideAnimation_4: -784964094
+      Astraunaut - walkSideAnimation_5: 1636758222
+      Astraunaut - walkSideAnimation_6: -821894917
+      Astraunaut - walkSideAnimation_7: -2075296729
+      Astraunaut - walkSideAnimation_8: -1648383005
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

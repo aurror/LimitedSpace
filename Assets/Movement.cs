@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 
     public float speed = 5f;  // Adjust the speed at which the character moves
      private Rigidbody2D rb;
+    public Animator animator;
 
  void Awake()
     {
@@ -23,7 +24,11 @@ public class Movement : MonoBehaviour
 
         if (horizontal < 0f) { transform.localScale = new Vector2(-1f, 1f); }
         if (horizontal > 0f) { transform.localScale = new Vector2(1f, 1f); }
-        
+
+        animator.SetFloat("Horizontal",horizontal);
+        animator.SetFloat("Vertical", vertical);
+        animator.SetFloat("Speed",direction.sqrMagnitude);
+
         Vector2 velocity = direction * speed;
         rb.velocity = velocity;
     }
