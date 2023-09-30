@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TractorBeamCollector : MonoBehaviour
 {
-    public float collectionRadius = 5f;
-    public float collectionSpeed = 5f;
+    private float collectionRadius = 25f;
+    private float collectionSpeed = 2f;
     private Vector3 screenCenter;
 
     void Start()
@@ -19,31 +19,43 @@ public class TractorBeamCollector : MonoBehaviour
         CollectResources();
     }
 
-  void CollectResources()
-    {
-        // Get all colliders within the collection radius
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, collectionRadius);
+void CollectResources()
+{
+    // Get all colliders within the collection radius
+    Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, collectionRadius);
 
-        foreach (Collider2D collider in colliders)
+    foreach (Collider2D collider in colliders)
+    {
+        // Check if the collider has the FloatingResource tag
+        if (collider.CompareTag("FloatingResource"))
         {
-            // Check if the collider has the FloatingResource tag
-            if (collider.CompareTag("FloatingResource"))
+            // Get the Rigidbody2D component of the resource
+            Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
+            if (rb != null)
             {
-                // Move the resources towards the position of this GameObject
-                collider.transform.position = Vector3.MoveTowards(collider.transform.position, transform.position, collectionSpeed * Time.deltaTime);
+                // Calculate the direction towards the center point (this GameObject)
+                Vector2 direction = ((Vector2)transform.position - rb.position).normalized;
+
+                // Apply a strong force to quickly change the trajectory of the resource
+                float forceMagnitude = collectionSpeed * 10;  // Adjust multiplier as needed
+                rb.AddForce(direction * forceMagnitude, ForceMode2D.Force);
+                
+                // Dampen the velocity to control the speed
+                float damping = 0.2f;  // Adjust damping factor as needed (between 0 and 1, where 0 is no damping and 1 is full damping)
+                rb.velocity = Vector2.Lerp(rb.velocity, direction * collectionSpeed, damping * Time.deltaTime);
 
                 // Check if the resource is close enough to be considered collected
-                if (Vector3.Distance(collider.transform.position, transform.position) < 0.1f)
+                float distance = Vector2.Distance(transform.position, rb.position);
+                if (distance < 0.5f)
                 {
-                    // Destroy the resource
-
-                    ContainerManager.instance.GetNewResourceInContainer(collider.gameObject.GetComponent<FloatingResource>().resourceType.ToString(),1);
+                    // Collect the resource
+                    ContainerManager.instance.GetNewResourceInContainer(collider.gameObject.GetComponent<FloatingResource>().resourceType.ToString(), 1);
                     Destroy(collider.gameObject);
                 }
             }
         }
     }
-     
+}
     void OnDrawGizmos()
     {
         // Draw a red sphere at the position of the GameObject, using the collection radius
