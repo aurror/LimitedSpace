@@ -13,8 +13,8 @@ public class TurretController : MonoBehaviour
 
     private bool canRotate = true;
     private float stopAfterShooting = 0.8f;
-    private float rotationSpeed = 100.0f;
-     public float firingAngleTolerance = 1f;  // Tolerance in degrees
+    private float rotationSpeed = 180.0f;
+     private float firingAngleTolerance = 1f;  // Tolerance in degrees
 
     void Update()
     {
