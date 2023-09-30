@@ -14,6 +14,7 @@ public class ContainerTrigger : MonoBehaviour
         FloatingLabelController.instance.ActivateLabe(true);
         FloatingLabelController.instance.SetInRange(true);
         FloatingLabelController.instance.SetResource(resourceKind);
+
        
     }
 
@@ -22,4 +23,6 @@ public class ContainerTrigger : MonoBehaviour
         FloatingLabelController.instance.ActivateLabe(false);
         FloatingLabelController.instance.SetInRange(false);
     }
+
+ 
 }

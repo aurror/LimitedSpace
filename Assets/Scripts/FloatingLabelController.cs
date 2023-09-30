@@ -31,22 +31,13 @@ public class FloatingLabelController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        // Assuming the trigger is a pickup item
-        floatingLabel.gameObject.SetActive(true);
-        isInRange = true;
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        floatingLabel.gameObject.SetActive(false);
-        isInRange = false;
-    }
-
     public void ActivateLabe(bool aktivate)
     {
         floatingLabel.gameObject.SetActive(aktivate);
+        if (!aktivate)
+        {
+            floatingLabel.text = "";
+        }
     }
 
     public void SetInRange(bool inRange)
@@ -57,5 +48,6 @@ public class FloatingLabelController : MonoBehaviour
     public void SetResource(string res)
     {
         resource = res;
+        floatingLabel.text = "Press [E] for " + resource;
     }
 }
