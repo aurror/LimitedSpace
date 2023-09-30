@@ -8,24 +8,38 @@ public class TurretController : MonoBehaviour
   
     public GameObject laserPrefab;  // Assign your laser prefab in the Inspector
     private float fireRate = 0.42f;  // Number of shots per second
-    private float shotVelocity = 50f;
+    private float shotVelocity = 80f;
     private float lastShotTime;
 
+    private bool canRotate = true;
+    private float stopAfterShooting = 0.8f;
+    private float rotationSpeed = 100.0f;
+     public float firingAngleTolerance = 1f;  // Tolerance in degrees
 
     void Update()
     {
-        RotateTowardsClosestEnemy();
-         ShootAtClosestEnemy();
+        if (Time.time >= lastShotTime + stopAfterShooting){
+            RotateTowardsClosestEnemy();
+        }
+        
+         AttemptToFireAtClosestEnemy();
     }
-   void ShootAtClosestEnemy()
+   void AttemptToFireAtClosestEnemy()
     {
         if (Time.time >= lastShotTime + 1f / fireRate)
         {
             GameObject closestEnemy = FindClosestEnemy();
             if (closestEnemy != null)
             {
-                ShootLaserAt(closestEnemy.transform.position);
-                lastShotTime = Time.time;
+                Vector3 directionToTarget = closestEnemy.transform.position - transform.position;
+                directionToTarget.z = 0;  // Ignore Z-axis differences
+                float angle = Vector3.Angle(transform.up, directionToTarget);  // Assumes turret's forward direction is up
+
+                if (angle < firingAngleTolerance)
+                {
+                    ShootLaserAt(closestEnemy.transform.position);
+                    lastShotTime = Time.time;
+                }
             }
         }
     }
@@ -49,16 +63,18 @@ Vector3 direction = (targetPosition - transform.position).normalized;
 
     void RotateTowardsClosestEnemy()
     {
-        GameObject closestEnemy = FindClosestEnemy();
-        Transform target = closestEnemy.transform;
-        if (closestEnemy != null)
-        {
- Vector3 directionToTarget = target.position - transform.position;
-        directionToTarget.z = 0; // Ignore Z-axis differences
+         GameObject closestEnemy = FindClosestEnemy();
+    if (closestEnemy == null)
+    {
+        return;
+    }
 
-        float angle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle - 90); // Subtract 90 degrees to make the Y-axis face the enemy
-        }
+    Vector3 directionToTarget = closestEnemy.transform.position - transform.position;
+    directionToTarget.z = 0; // Ignore Z-axis differences
+
+    float angle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg - 90f; // Subtract 90 degrees to make the Y-axis face the enemy
+    Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
+    transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     GameObject FindClosestEnemy()
