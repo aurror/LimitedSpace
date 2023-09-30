@@ -73,7 +73,7 @@ public class ContainerManager : MonoBehaviour
         {
             foreach(Resource res in resourcesList)
             {
-                if(res.name == newRessource)
+                if(res.resourceName == newRessource)
                 {
                     res.amount += newAmount;
                 }
@@ -93,7 +93,7 @@ public class ContainerManager : MonoBehaviour
         }
         foreach (Resource res in resourcesList)
         {
-            if (res.name == resource)
+            if (res.resourceName == resource)
             { 
                 res.amount -= newAmount;
                 if (res.amount < 0)
@@ -145,7 +145,7 @@ public class ContainerManager : MonoBehaviour
         {
             foreach (Resource res in resourcesList)
             {
-                if(playerInventoryList[i] == res.name)
+                if(playerInventoryList[i] == res.resourceName)
                 {
                     playerInventory.transform.GetChild(i).transform.GetComponent<Image>().sprite = res.sprite;
                 }
@@ -157,9 +157,9 @@ public class ContainerManager : MonoBehaviour
     { 
         foreach (Resource res in resourcesList)
         {
-            if (res.name == resource)
+            if (res.resourceName == resource)
             {
-                res.counter.transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>().text = (res.name +  ": " + res.amount.ToString());
+                res.counter.transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>().text = (res.resourceName +  ": " + res.amount.ToString());
             }
         }
     }

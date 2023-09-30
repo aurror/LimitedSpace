@@ -37,6 +37,7 @@ public class TractorBeamCollector : MonoBehaviour
                 {
                     // Destroy the resource
                     Destroy(collider.gameObject);
+                    ContainerManager.instance.GetNewResourceInContainer(gameObject.GetComponent<FloatingResource>().resourceType.ToString(),1);
                 }
             }
         }
