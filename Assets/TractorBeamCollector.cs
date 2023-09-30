@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TractorBeamCollector : MonoBehaviour
 {
-    private float collectionRadius = 25f;
+    private float collectionRadius = 80f;
     private float collectionSpeed = 2f;
     private Vector3 screenCenter;
 
@@ -16,7 +16,10 @@ public class TractorBeamCollector : MonoBehaviour
 
     void Update()
     {
-        CollectResources();
+        if (ContainerManager.instance.currentResourceAmount < ContainerManager.instance.maxRessourceAmount){
+            CollectResources();
+        }
+        
     }
 
 void CollectResources()

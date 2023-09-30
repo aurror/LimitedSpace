@@ -29,7 +29,8 @@ public class DamageManager : MonoBehaviour
                 GameObject randomGameObject = shipObjects[randomIndex];
 
                 randomGameObject.GetComponent<FloatingHealthBar>().GetDamage(5);
-                Destroy(collision.gameObject);
+                if(collision.gameObject.tag == "Enemy")
+                     Destroy(collision.gameObject);
             }
 
         }

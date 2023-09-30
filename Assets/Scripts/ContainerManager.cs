@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class ContainerManager : MonoBehaviour
 {
-    [SerializeField] private int maxRessourceAmount;
+    [SerializeField] public int maxRessourceAmount;
 
 
 
@@ -21,7 +22,8 @@ public class ContainerManager : MonoBehaviour
     [Header("Resources")]
     [SerializeField] private List<Resource> resourcesList = new List<Resource>();
 
-    private int currentResourceAmount;
+    [NonSerialized]
+    public int currentResourceAmount;
     private int currentResourcesAmountInPlayerInventory;
     private bool canAddResourceToContainer;
 
