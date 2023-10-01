@@ -29,6 +29,7 @@ public class FloatingLabelController : MonoBehaviour
         {
             ContainerManager.instance.GetResourceAsPlayer(resource, 1);
         }
+
     }
 
     public void ActivateLabe(bool aktivate)
