@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2713642004830395370}
   - component: {fileID: 3478436586926728472}
   - component: {fileID: 1328105364169300134}
-  m_Layer: 0
+  - component: {fileID: -5683919465331625812}
+  m_Layer: 6
   m_Name: Pirate
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,13 +99,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fca2cd4f51f1fa4c9b9348e76cd2620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 30
   ship: {fileID: 0}
   projectilePrefab: {fileID: 332159040981774615, guid: 021757b84a9aa3743bd9a2a4cbaaa8b6, type: 3}
   orbitRadius: 25
-  movementSpeed: 2
-  rotationSpeed: 100
-  shootingInterval: 2
+  movementSpeed: 1
+  rotationSpeed: 30
+  shootingInterval: 1
   gunPosition: {fileID: 6367407333048477837}
+--- !u!58 &-5683919465331625812
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5376020487886834140}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.25
 --- !u!1 &6367407333048477837
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2529659755955444680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

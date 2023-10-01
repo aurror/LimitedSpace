@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PirateAttack : MonoBehaviour
+public class PirateAttack : Enemy
 {
     [SerializeField] private Transform ship;
     [SerializeField] private GameObject projectilePrefab;
@@ -16,6 +16,7 @@ public class PirateAttack : MonoBehaviour
 
     private void Start()
     {
+ 
         ship = GameObject.FindGameObjectWithTag("Ship").transform;
         // Start a Coroutine to make enemies continuously shoot at the player
         StartCoroutine(ShootAtPlayer());

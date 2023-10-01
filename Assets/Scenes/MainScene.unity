@@ -686,6 +686,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &105660970
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376020487886834140, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
+      propertyPath: m_Name
+      value: Pirate
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
 --- !u!1 &117014602 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3888824837217687875, guid: 3d670c3558dd58645804a05b7d9a8c5e, type: 3}
@@ -887,6 +944,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1511566260051231345, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2244816784096988046, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
       propertyPath: m_Name
       value: ResourcesContainer
@@ -902,6 +963,10 @@ PrefabInstance:
     - target: {fileID: 3453017148114193262, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868503801316385738, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5159512763620876105, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
       propertyPath: m_LocalScale.x
@@ -4821,7 +4886,7 @@ GameObject:
   - component: {fileID: 956178149}
   m_Layer: 0
   m_Name: ContainerTriggerOrganic
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7797,7 +7862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidPrefab: {fileID: 0}
   ship: {fileID: 1778067944}
-  spawnRadius: 30
+  spawnRadius: 60
   asteroidSpeed: 10
   asteroidSpeedRandomness: 0.7
   spawnRate: 2
@@ -9622,83 +9687,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1994806045
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1328105364169300134, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: ship
-      value: 
-      objectReference: {fileID: 1778067944}
-    - target: {fileID: 1328105364169300134, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: movementSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328105364169300134, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: rotationSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328105364169300134, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: shootingInterval
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -21.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.905166
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.42505848
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713642004830395370, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -50.309
-      objectReference: {fileID: 0}
-    - target: {fileID: 3478436586926728472, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 53e72d0573353664b88575a692fa2774, type: 3}
-    - target: {fileID: 5376020487886834140, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
-      propertyPath: m_Name
-      value: Pirate
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 917fddcfdb6c90947abadc3a3ce31f17, type: 3}
 --- !u!1 &2002533031 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7896163604339456254, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
@@ -10533,7 +10521,7 @@ GameObject:
   - component: {fileID: 2133829967}
   m_Layer: 0
   m_Name: ContainerTriggerCabel
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11054,6 +11042,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor-Spaceship
       objectReference: {fileID: 0}
+    - target: {fileID: 832256744689598052, guid: 0c4322d913c514d45b3ad81e90042f36, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8607717021161318173, guid: 0c4322d913c514d45b3ad81e90042f36, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.8
@@ -11132,4 +11124,4 @@ SceneRoots:
   - {fileID: 1341829261}
   - {fileID: 155297564}
   - {fileID: 269425277}
-  - {fileID: 1994806045}
+  - {fileID: 105660970}

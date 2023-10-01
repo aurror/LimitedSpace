@@ -65,6 +65,8 @@ Vector3 direction = (targetPosition - transform.position).normalized;
          GameObject closestEnemy = FindClosestEnemy();
     if (closestEnemy == null)
     {
+        // rotate towards top
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, 0), rotationSpeed / 2 * Time.deltaTime);
         return;
     }
 
@@ -88,10 +90,10 @@ Vector3 direction = (targetPosition - transform.position).normalized;
         float distanceSqrToEnemy = directionToEnemy.sqrMagnitude;
 
         // Get the angle between the turret's forward vector and the vector to the enemy
-        float angleToEnemy = Vector3.Angle(transform.up, directionToEnemy);  // Assuming turret's forward is up
+        float angleToEnemy = Vector3.Angle(Vector2.up, directionToEnemy);  // Assuming turret's forward is up
 
         // If the enemy is an asteroid, check the angle
-        if (enemy.GetComponent<Asteroid>() != null && Mathf.Abs(angleToEnemy) <= 10f)  // Adjust the angle range as needed
+        if (enemy.name.Contains("Asteroid") && Mathf.Abs(angleToEnemy) <= 80f)  // Adjust the angle range as needed
         {
             // If the angle is within range, consider this enemy for targeting
             if (distanceSqrToEnemy < closestDistanceSqr)
@@ -100,7 +102,7 @@ Vector3 direction = (targetPosition - transform.position).normalized;
                 closestEnemy = enemy;
             }
         }
-        else if (enemy.GetComponent<Asteroid>() == null)
+        else if (!enemy.name.Contains("Asteroid"))
         {
             // If the enemy is not an asteroid, consider this enemy for targeting without angle check
             if (distanceSqrToEnemy < closestDistanceSqr)
