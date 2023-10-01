@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Asteroid : Enemy
 {
-      public GameObject explosionPrefab;
+      private GameObject explosionPrefab;
     public float lifeSpan = 10f;
     private float itemSpawnChance = 0.5f;
 
@@ -34,7 +34,10 @@ public class Asteroid : Enemy
         if (Random.value < itemSpawnChance)
         {
             // Spawn item
-            ResourceSpawner.instance.SpawnResource(ResourceSpawner.ResourceType.Iron, transform.position, GetComponent<Rigidbody2D>().velocity);
+            var resource = GetRandomResource();
+            if (resource != null){
+                ResourceSpawner.instance.SpawnResource((ResourceSpawner.ResourceType)resource, transform.position, GetComponent<Rigidbody2D>().velocity);
+            }
         }
 
         // Optionally call base.Die() to include base class behavior

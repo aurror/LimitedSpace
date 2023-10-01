@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AsteroidSpawner : MonoBehaviour
 {
-    public GameObject asteroidPrefab;
+    private GameObject asteroidPrefab;
     public Transform ship;
     public float spawnRadius = 10f;  // Distance from ship at which asteroids spawn
     public float asteroidSpeed = 15f;

@@ -1,22 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PirateAttack : Enemy
 {
-    [SerializeField] private Transform ship;
+    private GameObject explosionPrefab;
+    private Transform ship;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float orbitRadius = 4.0f;
     [SerializeField] private float movementSpeed = 2.0f;
     [SerializeField] private float rotationSpeed = 100.0f;
     [SerializeField] private float shootingInterval = 2.0f;
     [SerializeField] private GameObject gunPosition;
+
+    private float itemSpawnChance = 2.3f;
    // private Vector2 orbitPosition;
     private float currentAngle = 0.0f;
 
     private void Start()
     {
- 
+         explosionPrefab = Resources.Load<GameObject>("Explosion");
         ship = GameObject.FindGameObjectWithTag("Ship").transform;
         // Start a Coroutine to make enemies continuously shoot at the player
         StartCoroutine(ShootAtPlayer());
@@ -62,5 +66,37 @@ public class PirateAttack : Enemy
 
             yield return new WaitForSeconds(shootingInterval);
         }
+    }
+
+    
+    protected override void Die()
+    {
+        // Instantiate the explosion prefab at the asteroid's position and rotation
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
+
+        // Additional behavior specific to Asteroid death
+        // spawn stuff
+        var tmpSpawnChance = itemSpawnChance;
+        while (tmpSpawnChance > 1f){
+            tmpSpawnChance =- 1;
+            // Spawn item
+            var resource = this.GetRandomResource();
+            if (resource != null){
+                ResourceSpawner.instance.SpawnResource((ResourceSpawner.ResourceType)resource, transform.position, Vector2.zero);
+            }
+            
+        }
+        if (Random.value < itemSpawnChance)
+        {
+            // Spawn item
+            var resource = GetRandomResource();
+            if (resource != null){
+                ResourceSpawner.instance.SpawnResource((ResourceSpawner.ResourceType)resource, transform.position, Vector2.zero);
+            }
+        }
+
+        // Optionally call base.Die() to include base class behavior
+
+        base.Die();
     }
 }

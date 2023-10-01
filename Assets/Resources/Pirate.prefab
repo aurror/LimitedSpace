@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
-  ship: {fileID: 0}
+  resources: 000000000300000001000000
   projectilePrefab: {fileID: 332159040981774615, guid: 021757b84a9aa3743bd9a2a4cbaaa8b6, type: 3}
   orbitRadius: 25
   movementSpeed: 1

@@ -48,7 +48,7 @@ public class ContainerManager : MonoBehaviour
             GetNewResourceInContainer("Organic", 1);
   
         if (Input.GetKeyDown(KeyCode.U))
-            GetNewResourceInContainer("Cabel", 1);
+            GetNewResourceInContainer("Cable", 1);
         if (Input.GetKeyDown(KeyCode.X))
         {
             LooseItemAsPlayer("Iron", 1);

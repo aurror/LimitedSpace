@@ -148,7 +148,7 @@ public class EventManager : MonoBehaviour
             case GameEvent.PirateAttack:
                 // Trigger Pirate Attack event
                 FlashWarning("! Warning !", "Pirates are approaching");
-               // GetComponent<PirateAttackers>().EnableEvent(Random.Range(minEventInterval,maxEventInterval));
+                GetComponent<PirateSpawner>().EnableEvent(Random.Range(minEventInterval / 10f,maxEventInterval / 5f));
                 break;
             case GameEvent.RareTreasureFind:
                 // Reset the counter when a treasure event occurs
