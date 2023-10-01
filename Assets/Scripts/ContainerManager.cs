@@ -18,6 +18,7 @@ public class ContainerManager : MonoBehaviour
     [Header("PlayerInventory")]
     [SerializeField] private GameObject playerInventory;
     public List<string> playerInventoryList = new List<string>();
+    [SerializeField] Sprite defaultInventorySprite;
 
 
     [Header("Resources")]
@@ -175,7 +176,7 @@ private void DisplayPlayerResources()
     {
         for(int i = 0; i < playerInventory.transform.childCount; i++)
         {
-            playerInventory.transform.GetChild(i).transform.GetComponent<Image>().sprite = null;
+            playerInventory.transform.GetChild(i).transform.GetComponent<Image>().sprite = defaultInventorySprite;
         }
     }
 

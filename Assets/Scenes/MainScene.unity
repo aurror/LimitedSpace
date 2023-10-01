@@ -8523,6 +8523,7 @@ MonoBehaviour:
   currentResourcesCounter: {fileID: 1591584410}
   playerInventory: {fileID: 117014602}
   playerInventoryList: []
+  defaultInventorySprite: {fileID: 21300000, guid: e14a1419c3c81954eb86a2776890c3e9, type: 3}
   resourcesList:
   - {fileID: 1341829263}
   - {fileID: 1341829262}
