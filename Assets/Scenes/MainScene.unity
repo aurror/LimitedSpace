@@ -3216,6 +3216,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 155297564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &558029005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6487112276667925535, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+  m_PrefabInstance: {fileID: 4978113247502537022}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &558029008 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6006081983825454199, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+  m_PrefabInstance: {fileID: 4978113247502537022}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &558029009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558029005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0257fcb6a3445b94991722bca63c6b79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 558029008}
+  shakeDuration: 1
+  maxRotationAmount: 0.5
 --- !u!1 &603041657
 GameObject:
   m_ObjectHideFlags: 0
@@ -6895,7 +6920,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1257353639}
   - component: {fileID: 1257353638}
-  - component: {fileID: 1257353637}
   - component: {fileID: 1257353636}
   m_Layer: 0
   m_Name: TopDown
@@ -6948,14 +6972,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &1257353637
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257353635}
-  m_Enabled: 1
 --- !u!20 &1257353638
 Camera:
   m_ObjectHideFlags: 0
@@ -6991,7 +7007,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 33
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -9371,8 +9387,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 690, y: -312.16}
-  m_SizeDelta: {x: 478.8, y: 395.67}
+  m_AnchoredPosition: {x: 700.76, y: -306.18}
+  m_SizeDelta: {x: 442.57, y: 407.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1862081326
 MonoBehaviour:
@@ -11674,6 +11690,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7896163604339456254, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2002533037}
+    - targetCorrespondingSourceObject: {fileID: 6487112276667925535, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 558029009}
   m_SourcePrefab: {fileID: 100100000, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
 --- !u!1001 &4984119786505335359
 PrefabInstance:

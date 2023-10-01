@@ -143,7 +143,7 @@ public class EventManager : MonoBehaviour
                 // Trigger Solar Flare event
                 FlashWarning("! Warning !", "A solar flare is coming. Watch your energy!");
                 DamageManager.instance.SolarFlair();
-               // GetComponent<SolarFlare>().EnableEvent(Random.Range(minEventInterval,maxEventInterval));
+                CameraShake.instance.StartShake();
                 break;
             case GameEvent.PirateAttack:
                 // Trigger Pirate Attack event
