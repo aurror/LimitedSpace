@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
 {
 
     public float speed = 5f;  // Adjust the speed at which the character moves
+    private float saveSpeed;
      private Rigidbody2D rb;
     public Animator animator;
 
@@ -31,5 +32,20 @@ public class Movement : MonoBehaviour
 
         Vector2 velocity = direction * speed;
         rb.velocity = velocity;
+
+        // Check if the "E" key is pressed.
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Trigger the animation by setting a trigger parameter.
+            animator.SetTrigger("Player_interact");
+            saveSpeed = speed;
+            speed = 0f;
+        }
+    }
+    public void StopAnimation()
+    {
+        // Stop the animation by resetting the trigger.
+        animator.ResetTrigger("Player_interact");
+        speed = saveSpeed;
     }
 }
