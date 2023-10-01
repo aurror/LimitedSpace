@@ -15,19 +15,31 @@ public class AsteroidSpawner : MonoBehaviour
 
     private float nextSpawnTime = 0f;
 
+    private bool eventEnabled = false;
+    private float remainingEventTime = 0f;
 void Awake()
 {
     asteroidPrefab = Resources.Load<GameObject>("Asteroid");
 }
     void Update()
     {
-        if (Time.time >= nextSpawnTime)
+
+        if (eventEnabled && Time.time >= nextSpawnTime)
         {
+            if (remainingEventTime <= 0f)
+            {
+                eventEnabled = false;
+            }
+            remainingEventTime -= Time.deltaTime;
             nextSpawnTime = Time.time + 1f / spawnRate + Random.Range(-spawnRandomness * 1f / spawnRate, spawnRandomness * 1f / spawnRate);
             SpawnAsteroid();
         }
     }
 
+    public void EnableEvent(float duration){
+        this.remainingEventTime = duration;
+        this.eventEnabled = true;
+    }
     void SpawnAsteroid()
     {
  // Determine spawn position offscreen
