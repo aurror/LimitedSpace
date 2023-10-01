@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8963705874436782017}
   - component: {fileID: 2350294848458018363}
-  - component: {fileID: 8253415394489762562}
   - component: {fileID: 4936098013314031111}
   - component: {fileID: 4440568680006592813}
+  - component: {fileID: 6760463809058541229}
   m_Layer: 7
   m_Name: LaserShotPirate
   m_TagString: Untagged
@@ -87,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8253415394489762562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332159040981774615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fd85e939d19ed648830f5f7389207a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyAfterTime: 0
 --- !u!50 &4936098013314031111
 Rigidbody2D:
   serializedVersion: 4
@@ -162,3 +149,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &6760463809058541229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332159040981774615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff22252946038842ab4bb3a2ad5d18b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  lifetime: 2
