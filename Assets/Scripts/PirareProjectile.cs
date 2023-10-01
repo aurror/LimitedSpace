@@ -30,7 +30,7 @@ public class PirareProjectile : MonoBehaviour
         {
             // Handle collision with the ship
             // Example: Deal damage to the enemy
-            DamageManager.instance.SetCurrentEvent("PriateAttack");
+            DamageManager.instance.SetCurrentEvent(EventManager.GameEvent.PirateAttack);
             Destroy(gameObject); // Destroy the projectile
         }
     }
