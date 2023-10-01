@@ -54,19 +54,11 @@ public class PirateAttack : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("Shoot");
             // Create a new projectile
             GameObject projectile = Instantiate(projectilePrefab, gunPosition.transform.position, Quaternion.identity);
             Debug.Log(gunPosition.transform.position);
 
             projectile.GetComponent<Rigidbody2D>().velocity = ship.position - gunPosition.transform.position * 0.5f;
-            //projectile.GetComponent<Rigidbody2D>().velocity = gunPosition.transform.position * 5.0f;
-            // Set the projectile's direction towards the ship
-            // Vector2 directionToPlayer = (ship.position - transform.position).normalized;
-            // projectile.GetComponent<Rigidbody2D>().velocity = directionToPlayer * 5.0f;
-
-            // Destroy the projectile after a certain time to avoid clutter
-            // Destroy(projectile, 2.0f);
 
             yield return new WaitForSeconds(shootingInterval);
         }

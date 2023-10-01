@@ -50,17 +50,13 @@ public class DamageManager : MonoBehaviour
                     }
                 }
             }
-            if(currentEvent == "PirateAttack")
+            foreach (StringIntPair pair in eventDamage)
             {
-                foreach (StringIntPair pair in eventDamage)
+                if (pair.stringValue == "PirateAttack")
                 {
-                    if (pair.stringValue == "PirateAttack")
-                    {
-                        EnemyAttack(collision.gameObject, pair.intValue);
-                    }
+                    EnemyAttack(collision.gameObject, pair.intValue);
                 }
             }
-
         }
     }
 
