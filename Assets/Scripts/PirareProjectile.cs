@@ -10,14 +10,6 @@ public class PirareProjectile : MonoBehaviour
 
     private void Start()
     {
-     /*   target = GameObject.FindGameObjectWithTag("Ship").transform;
-        // Set the initial velocity of the projectile
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-         
-        }
-     */
         // Destroy the projectile after the specified lifetime
         Destroy(gameObject, lifetime);
     }

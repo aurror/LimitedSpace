@@ -16,7 +16,7 @@ public class ContainerManager : MonoBehaviour
 
     [Header("PlayerInventory")]
     [SerializeField] private GameObject playerInventory;
-    [SerializeField] private List<string> playerInventoryList = new List<string>();
+    public List<string> playerInventoryList = new List<string>();
 
 
     [Header("Resources")]
@@ -94,7 +94,8 @@ public class ContainerManager : MonoBehaviour
 
     public void GetResourceAsPlayer(string resource, int newAmount)
     {
-        if (playerInventory.transform.childCount <= currentResourcesAmountInPlayerInventory)
+        
+        if (currentResourcesAmountInPlayerInventory == playerInventory.transform.childCount)
         {
             Debug.LogError("Inventory full");
             return;
@@ -117,15 +118,17 @@ public class ContainerManager : MonoBehaviour
                 }
             }
         }
+        Debug.Log("get: " + currentResourcesAmountInPlayerInventory);
         DisplayPlayerResources();
         DisplayContainerResource(resource);
     }
 
     public void LooseItemAsPlayer(string resource, int amount)
     {
+        Debug.Log(resource + "/" + amount);
         int currentResourceAmount = 0;
         int deletetResources = 0;
-        for(int i = 0; i < playerInventoryList.Count; i++)
+        for(int i = playerInventoryList.Count-1; i >= 0; i--)
         {
             if (resource == playerInventoryList[i])
             {
@@ -143,6 +146,8 @@ public class ContainerManager : MonoBehaviour
             Debug.Log("Not enough " + resource);
         }
         DisplayPlayerResources();
+       // for(int i = 0; i < playerInventoryList)
+        Debug.Log("Loose: " + currentResourcesAmountInPlayerInventory);
     }
 
     private void DisplayPlayerResources()
@@ -152,8 +157,10 @@ public class ContainerManager : MonoBehaviour
         {
             foreach (Resource res in resourcesList)
             {
+       
                 if(playerInventoryList[i] == res.resourceName)
                 {
+                    Debug.Log("DisplayPlayerRes: " + res.resourceName);
                     playerInventory.transform.GetChild(i).transform.GetComponent<Image>().sprite = res.sprite;
                 }
             }
