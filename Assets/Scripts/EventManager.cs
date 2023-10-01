@@ -162,6 +162,7 @@ public class EventManager : MonoBehaviour
         }
 
         lastEvent = randomEvent;  // Update the last event
+        DamageManager.instance.SetCurrentEvent(lastEvent);
         eventsSinceLastTreasure++;  // Increment the counter for each event
     }
 }
