@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4936098013314031111}
   - component: {fileID: 4440568680006592813}
   m_Layer: 7
-  m_Name: LaserShot
+  m_Name: LaserShotPirate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 332159040981774615}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.35, y: -0.8813, z: 0}
+  m_LocalScale: {x: 0.56317544, y: 0.11868348, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 95392d2954db51f4da2a307f74278f84, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8490566, g: 0.11152755, b: 0.084104665, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

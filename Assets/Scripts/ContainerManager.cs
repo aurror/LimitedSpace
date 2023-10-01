@@ -148,7 +148,6 @@ public class ContainerManager : MonoBehaviour
     private void DisplayPlayerResources()
     {
         ClearPlayerInventoryDisplay();
-        Debug.Log(playerInventoryList.Count);
         for (int i = 0; i < playerInventoryList.Count; i++)
         {
             foreach (Resource res in resourcesList)
