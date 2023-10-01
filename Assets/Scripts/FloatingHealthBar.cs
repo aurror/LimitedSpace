@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class FloatingHealthBar : MonoBehaviour
 {
-    [SerializeField] private Slider slider;
-    [SerializeField] private Image fill;
     [SerializeField] private int maxValue;
     [SerializeField] private List<StringIntPair> myPairs = new List<StringIntPair>();
 
@@ -34,11 +32,6 @@ public class FloatingHealthBar : MonoBehaviour
 
         animator.SetFloat("Health",currentHealth);
     }
-    private void UpdateHealthBar(float currentValue)
-    {
-        slider.value = currentValue / maxValue;
-        UpdateColor();
-    }
 
     public void GetDamage(int damage)
     {
@@ -47,7 +40,6 @@ public class FloatingHealthBar : MonoBehaviour
         {
             currentHealth = 0;
         }
-        UpdateHealthBar(currentHealth);
     }
 
     public void GetHealth(int health)
@@ -57,23 +49,8 @@ public class FloatingHealthBar : MonoBehaviour
         {
             currentHealth = maxValue;
         }
-        UpdateHealthBar(currentHealth);
     }
 
-    private void UpdateColor()
-    {
-        if(currentHealth > 66)
-        {
-            fill.color = Color.green;
-            return;
-        }
-        if(currentHealth < 33)
-        {
-            fill.color = Color.red;
-            return;
-        }
-        fill.color = Color.yellow;
-    }
 
     public float GetHealth()
     {
