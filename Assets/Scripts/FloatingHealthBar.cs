@@ -72,5 +72,10 @@ public class FloatingHealthBar : MonoBehaviour
         fill.color = Color.yellow;
     }
 
+    public float GetHealth()
+    {
+        return currentHealt;
+    }
+
 }
 
