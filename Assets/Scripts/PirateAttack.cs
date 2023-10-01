@@ -56,7 +56,6 @@ public class PirateAttack : MonoBehaviour
         {
             // Create a new projectile
             GameObject projectile = Instantiate(projectilePrefab, gunPosition.transform.position, Quaternion.identity);
-            Debug.Log(gunPosition.transform.position);
 
             projectile.GetComponent<Rigidbody2D>().velocity = ship.position - gunPosition.transform.position * 0.5f;
 

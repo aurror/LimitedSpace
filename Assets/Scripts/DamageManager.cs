@@ -65,7 +65,8 @@ public class DamageManager : MonoBehaviour
 
     private void MeteoreEvent(GameObject gameObject, int damage)
     {
-        if(shield.GetComponent<FloatingHealthBar>().GetHealth() > 0)
+        Debug.Log("MeteoreEvent");
+        if (shield.GetComponent<FloatingHealthBar>().GetHealth() > 0)
         {
             shield.GetComponent<FloatingHealthBar>().GetDamage(damage);
 
