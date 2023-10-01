@@ -57,7 +57,7 @@ public class ContainerManager : MonoBehaviour
         if (newRessourceAmoont > 0 || newRessourceAmoont < maxRessourceAmount)
         {
             currentResourceAmount = newRessourceAmoont;
-            currentResourcesCounter.transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>().text = "All Resources: " + currentResourceAmount.ToString() + "/" + maxRessourceAmount;
+            currentResourcesCounter.transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>().text = currentResourceAmount.ToString() + "/" + maxRessourceAmount;
         }
         if (newRessourceAmoont > maxRessourceAmount)
             currentResourceAmount = maxRessourceAmount;
@@ -166,7 +166,7 @@ private void DisplayPlayerResources()
         {
             if (res.resourceName == resource)
             {
-                res.counter.transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>().text = (res.resourceName +  ": " + res.amount.ToString());
+                res.counter.transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>().text = (res.amount.ToString());
             }
         }
     }
@@ -182,11 +182,11 @@ private void DisplayPlayerResources()
     private void DeleteAllResourcesInShip()
     {
         currentResourceAmount = 0;
-        currentResourcesCounter.transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>().text = "All Resources: " + currentResourceAmount.ToString() + "/" + maxRessourceAmount;
+        currentResourcesCounter.transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>().text = currentResourceAmount.ToString() + "/" + maxRessourceAmount;
         foreach (Resource res in resourcesList)
         {
             res.amount = 0;
-            res.counter.transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>().text = (res.resourceName + ": " + res.amount.ToString());
+            res.counter.transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>().text = (res.amount.ToString());
         }
     }
 
