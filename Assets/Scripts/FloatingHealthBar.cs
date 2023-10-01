@@ -12,6 +12,7 @@ public class FloatingHealthBar : MonoBehaviour
 
     public int currentHealth;
     public static FloatingHealthBar instance;
+    public Animator animator;
 
 
     private void Awake()
@@ -30,6 +31,8 @@ public class FloatingHealthBar : MonoBehaviour
         {
             GetHealth(5);
         }
+
+        animator.SetFloat("Health",currentHealth);
     }
     private void UpdateHealthBar(float currentValue)
     {
