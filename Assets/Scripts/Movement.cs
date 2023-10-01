@@ -38,14 +38,14 @@ public class Movement : MonoBehaviour
         {
             // Trigger the animation by setting a trigger parameter.
             animator.SetTrigger("Player_interact");
-            saveSpeed = speed;
-            speed = 0f;
+            // saveSpeed = speed;
+            // speed = 0f;
         }
     }
     public void StopAnimation()
     {
         // Stop the animation by resetting the trigger.
         animator.ResetTrigger("Player_interact");
-        speed = saveSpeed;
+        // speed = saveSpeed;
     }
 }

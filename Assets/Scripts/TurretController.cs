@@ -6,7 +6,7 @@ using UnityEngine;
 public class TurretController : MonoBehaviour
 {
   
-    public GameObject laserPrefab;  // Assign your laser prefab in the Inspector
+    private GameObject laserPrefab;  // Assign your laser prefab in the Inspector
     private float fireRate = 0.42f;  // Number of shots per second
     private float shotVelocity = 80f;
     private float lastShotTime;
@@ -14,7 +14,9 @@ public class TurretController : MonoBehaviour
     private float stopAfterShooting = 0.8f;
     private float rotationSpeed = 180.0f;
      private float firingAngleTolerance = 1f;  // Tolerance in degrees
-
+    void Awake(){
+        laserPrefab = Resources.Load<GameObject>("LaserShot");
+    }
     void Update()
     {
         if (Time.time >= lastShotTime + stopAfterShooting){
