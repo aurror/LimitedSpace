@@ -25,11 +25,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832256744689598052}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.61941004, y: 2.007121, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1377099056301081189}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &49191762184260490
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 45a0614cdb7545b4780a680fc70c317a, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: fb7d49d5b23377742af52d4558a96be0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,3 +85,114 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &3202646158491953257
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8607717021161318173}
+    m_Modifications:
+    - target: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6464659073725995557, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      propertyPath: m_Name
+      value: Spaceship-Walls
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6464659073725995557, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7139233283094261100}
+  m_SourcePrefab: {fileID: 100100000, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+--- !u!4 &1377099056301081189 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4570702812844173836, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+  m_PrefabInstance: {fileID: 3202646158491953257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8486189740068909644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6464659073725995557, guid: ad6580f520a2d0f41bb1b520f5c6c197, type: 3}
+  m_PrefabInstance: {fileID: 3202646158491953257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7139233283094261100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486189740068909644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5662ee45412f2fa4da9898c6623cd567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  generator: {fileID: 0}
+  shield: {fileID: 0}
+  currentEvent: 0
+  eventDamage:
+  - stringValue: Meteore
+    intValue: 5
+  - stringValue: SolarFlair
+    intValue: 2
+  - stringValue: PirateAttack
+    intValue: 10
+  solarFlairTime: 20
