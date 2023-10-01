@@ -6,7 +6,7 @@ public class FloatingLabelController : MonoBehaviour
     public Transform characterTransform;  // Drag your character's Transform here
     public TMP_Text floatingLabel;  // Drag your TextMesh Pro UGUI Text here
     public float heightOffset = 2.0f;  // Adjust this to position the label above your character
-    private bool isInRange = false;
+    public bool isInRange = false;
 
     private string resource;
 
@@ -28,6 +28,10 @@ public class FloatingLabelController : MonoBehaviour
         if (isInRange && Input.GetKeyDown(KeyCode.E))
         {
             ContainerManager.instance.GetResourceAsPlayer(resource, 1);
+        }
+        if (isInRange && Input.GetKeyDown(KeyCode.X))
+        {
+            ContainerManager.instance.DeleteSpecificResource(resource);
         }
 
     }
@@ -57,4 +61,5 @@ public class FloatingLabelController : MonoBehaviour
         resource = res;
         floatingLabel.text = text + resource;
     }
+
 }

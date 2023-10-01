@@ -169,8 +169,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press [E]
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d796a5750a24344aa2363da7b75965a, type: 2}
+  m_sharedMaterial: {fileID: -3483185687889844943, guid: 7d796a5750a24344aa2363da7b75965a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -550,6 +550,7 @@ MonoBehaviour:
   characterTransform: {fileID: 1010823881300725225}
   floatingLabel: {fileID: 2193467580409220318}
   heightOffset: 2
+  isInRange: 0
 --- !u!58 &6008193365453384939
 CircleCollider2D:
   m_ObjectHideFlags: 0
