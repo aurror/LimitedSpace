@@ -14,16 +14,10 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        InitializeHealthBar();
+
     }
 
-    private void InitializeHealthBar()
-    {
-        for (int i = 0; i < maxHealth; i++)
-        {
-            Instantiate(heartContainerPrefab, healthBar);
-        }
-    }
+
 
     private void Update()
     {
