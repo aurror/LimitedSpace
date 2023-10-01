@@ -122,51 +122,52 @@ public class ContainerManager : MonoBehaviour
         DisplayPlayerResources();
         DisplayContainerResource(resource);
     }
-
-    public void LooseItemAsPlayer(string resource, int amount)
+public void LooseItemAsPlayer(string resource, int amount)
+{
+    Debug.Log(resource + "/" + amount);
+    int currentResourceAmount = 0;
+    List<string> itemsToRemove = new List<string>();
+    foreach (var item in playerInventoryList)
     {
-        Debug.Log(resource + "/" + amount);
-        int currentResourceAmount = 0;
-        int deletetResources = 0;
-        for(int i = playerInventoryList.Count-1; i >= 0; i--)
+        if (item == resource)
         {
-            if (resource == playerInventoryList[i])
+            currentResourceAmount++;
+            if (itemsToRemove.Count < amount)
             {
-                currentResourceAmount += 1;
-                if(deletetResources < amount)
-                {
-                    playerInventoryList.Remove(playerInventoryList[i]);
-                    deletetResources += 1;
-                    currentResourcesAmountInPlayerInventory -= 1;
-                }
-            }
-        }
-        if(currentResourceAmount < amount)
-        {
-            Debug.Log("Not enough " + resource);
-        }
-        DisplayPlayerResources();
-       // for(int i = 0; i < playerInventoryList)
-        Debug.Log("Loose: " + currentResourcesAmountInPlayerInventory);
-    }
-
-    private void DisplayPlayerResources()
-    {
-        ClearPlayerInventoryDisplay();
-        for (int i = 0; i < playerInventoryList.Count; i++)
-        {
-            foreach (Resource res in resourcesList)
-            {
-       
-                if(playerInventoryList[i] == res.resourceName)
-                {
-                    Debug.Log("DisplayPlayerRes: " + res.resourceName);
-                    playerInventory.transform.GetChild(i).transform.GetComponent<Image>().sprite = res.sprite;
-                }
+                itemsToRemove.Add(item);
             }
         }
     }
 
+    foreach (var item in itemsToRemove)
+    {
+        playerInventoryList.Remove(item);
+        currentResourcesAmountInPlayerInventory--;
+    }
+
+    if (currentResourceAmount < amount)
+    {
+        Debug.Log("Not enough " + resource);
+    }
+    DisplayPlayerResources();
+    Debug.Log("RemainingItems: " + currentResourcesAmountInPlayerInventory);
+}
+
+private void DisplayPlayerResources()
+{
+    ClearPlayerInventoryDisplay();
+    int displayIndex = 0;
+    foreach (var item in playerInventoryList)
+    {
+        Resource matchingResource = resourcesList.Find(res => res.resourceName == item);
+        if (matchingResource != null)
+        {
+            Debug.Log("DisplayPlayerRes: " + matchingResource.resourceName);
+            playerInventory.transform.GetChild(displayIndex).transform.GetComponent<Image>().sprite = matchingResource.sprite;
+            displayIndex++;
+        }
+    }
+}
     private void DisplayContainerResource(string resource)
     { 
         foreach (Resource res in resourcesList)

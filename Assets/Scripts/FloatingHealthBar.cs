@@ -117,7 +117,7 @@ public class FloatingHealthBar : MonoBehaviour
 
     private void FixObject(List<string> necessaryResources)
     {
-        List<string> temp = ContainerManager.instance.playerInventoryList;
+        List<string> temp = new List<string>(ContainerManager.instance.playerInventoryList);
         bool hasAllResources = true;
         foreach (var item in necessaryResources)
         {
@@ -137,6 +137,7 @@ public class FloatingHealthBar : MonoBehaviour
         }
         else
         {
+            Debug.Log("Deleting " + necessaryResources.Count + " Resources");
             foreach (string res in necessaryResources)
             {
                 ContainerManager.instance.LooseItemAsPlayer(res, 1);
