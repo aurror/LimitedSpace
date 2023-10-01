@@ -645,6 +645,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ResourcesContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 3453017148114193262, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453017148114193262, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5159512763620876105, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -724,6 +732,14 @@ PrefabInstance:
     - target: {fileID: 8414095056327694460, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
       propertyPath: m_SortingOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504754464501554937, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504754464501554937, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2012,6 +2028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 468720569}
   - component: {fileID: 468720568}
+  - component: {fileID: 468720570}
   m_Layer: 0
   m_Name: cat
   m_TagString: Untagged
@@ -2087,6 +2104,27 @@ Transform:
   - {fileID: 151652614}
   m_Father: {fileID: 269425277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &468720570
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468720567}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3538b387e9b4535469bee50465240d75, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &471002547
 GameObject:
   m_ObjectHideFlags: 0

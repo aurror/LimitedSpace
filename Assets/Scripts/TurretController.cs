@@ -77,21 +77,39 @@ Vector3 direction = (targetPosition - transform.position).normalized;
     }
 
     GameObject FindClosestEnemy()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closestEnemy = null;
-        float closestDistanceSqr = Mathf.Infinity;
+{
+    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    GameObject closestEnemy = null;
+    float closestDistanceSqr = Mathf.Infinity;
 
-        foreach (GameObject enemy in enemies)
+    foreach (GameObject enemy in enemies)
+    {
+        Vector3 directionToEnemy = enemy.transform.position - transform.position;
+        float distanceSqrToEnemy = directionToEnemy.sqrMagnitude;
+
+        // Get the angle between the turret's forward vector and the vector to the enemy
+        float angleToEnemy = Vector3.Angle(transform.up, directionToEnemy);  // Assuming turret's forward is up
+
+        // If the enemy is an asteroid, check the angle
+        if (enemy.GetComponent<Asteroid>() != null && Mathf.Abs(angleToEnemy) <= 10f)  // Adjust the angle range as needed
         {
-            Vector3 directionToEnemy = enemy.transform.position - transform.position;
-            float distanceSqrToEnemy = directionToEnemy.sqrMagnitude;
+            // If the angle is within range, consider this enemy for targeting
             if (distanceSqrToEnemy < closestDistanceSqr)
             {
                 closestDistanceSqr = distanceSqrToEnemy;
                 closestEnemy = enemy;
             }
         }
-        return closestEnemy;
+        else if (enemy.GetComponent<Asteroid>() == null)
+        {
+            // If the enemy is not an asteroid, consider this enemy for targeting without angle check
+            if (distanceSqrToEnemy < closestDistanceSqr)
+            {
+                closestDistanceSqr = distanceSqrToEnemy;
+                closestEnemy = enemy;
+            }
+        }
     }
+    return closestEnemy;
+}
 }

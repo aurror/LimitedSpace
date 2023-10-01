@@ -172,4 +172,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  explosionPrefab: {fileID: 0}
   lifeSpan: 10

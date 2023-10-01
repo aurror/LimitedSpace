@@ -8,6 +8,7 @@ public class TractorBeamCollector : MonoBehaviour
     private float collectionSpeed = 2f;
     private Vector3 screenCenter;
 
+    private bool isWorking = false;
     void Start()
     {
         // Assuming the center of the screen is the target point for collection
@@ -17,7 +18,20 @@ public class TractorBeamCollector : MonoBehaviour
     void Update()
     {
         if (ContainerManager.instance.currentResourceAmount < ContainerManager.instance.maxRessourceAmount){
+            if (!isWorking){
+                isWorking = true;
+                gameObject.transform.parent.GetComponent<Animator>().enabled = true;
+            }
             CollectResources();
+        } else {
+            if (isWorking){
+                
+                gameObject.transform.parent.GetComponent<Animator>().enabled = false;
+                gameObject.transform.localScale = new Vector3(1.5f,1.5f,1);
+                isWorking = false;
+            }
+            
+            
         }
         
     }
