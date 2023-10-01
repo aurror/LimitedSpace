@@ -102,9 +102,9 @@ MonoBehaviour:
   health: 30
   resources: 000000000300000001000000
   projectilePrefab: {fileID: 332159040981774615, guid: 021757b84a9aa3743bd9a2a4cbaaa8b6, type: 3}
-  orbitRadius: 25
+  orbitRadius: 35
   movementSpeed: 1
-  rotationSpeed: 30
+  rotationSpeed: 20
   shootingInterval: 1
   gunPosition: {fileID: 6367407333048477837}
 --- !u!58 &-5683919465331625812

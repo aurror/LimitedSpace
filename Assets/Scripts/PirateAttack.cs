@@ -60,7 +60,7 @@ public class PirateAttack : Enemy
         while (true)
         {
             // Create a new projectile
-            GameObject projectile = Instantiate(projectilePrefab, gunPosition.transform.position, Quaternion.identity);
+            GameObject projectile = Instantiate(projectilePrefab, gunPosition.transform.position, Quaternion.identity * Quaternion.Euler(0, 0, 90));
 
             projectile.GetComponent<Rigidbody2D>().velocity = ship.position - gunPosition.transform.position * 0.5f;
 

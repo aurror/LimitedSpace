@@ -8,7 +8,7 @@ public class TurretController : MonoBehaviour
   
     private GameObject laserPrefab;  // Assign your laser prefab in the Inspector
     private float fireRate = 0.42f;  // Number of shots per second
-    private float shotVelocity = 80f;
+    private float shotVelocity = 280f;
     private float lastShotTime;
 
     private float stopAfterShooting = 0.8f;

@@ -34,8 +34,17 @@ public class DamageManager : MonoBehaviour
     {
         if (shipObjects.Count > 0)
         {
-            if(currentEvent == EventManager.GameEvent.AsteroidField)
-            {
+            // if(currentEvent == EventManager.GameEvent.AsteroidField)
+            // {
+            //     foreach(StringIntPair pair in eventDamage)
+            //     {
+            //         if(pair.stringValue == "Meteore")
+            //         {
+            //             MeteoreEvent(collision.gameObject, pair.intValue);
+            //         }
+            //     }
+            // }
+            if (collision.gameObject.name.Contains("Asteroid")){
                 foreach(StringIntPair pair in eventDamage)
                 {
                     if(pair.stringValue == "Meteore")
@@ -83,7 +92,8 @@ public class DamageManager : MonoBehaviour
         }
 
         if (gameObject.tag == "Enemy")
-            Destroy(gameObject);
+            gameObject.GetComponent<Enemy>().TakeDamage(1000);
+            //Destroy(gameObject);
     }
 
     public void SolarFlair()
