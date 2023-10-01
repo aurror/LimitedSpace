@@ -24,7 +24,8 @@ public class EventManager : MonoBehaviour
     private GameEvent lastEvent = GameEvent.None;
     private int eventsSinceLastTreasure = 0;
 
-
+    public Color warningColor;
+    public Color fortuneColor;
 
     private void Start()
     {
@@ -37,9 +38,15 @@ public class EventManager : MonoBehaviour
     {
         warningHeader.text = header;
         warningSubHeader.text = subHeader;
-        StartCoroutine(FlashWarningCoroutine());
+        StartCoroutine(FlashCoroutine(warningColor));
     }
-    private IEnumerator FlashWarningCoroutine()
+    private void FlashFortune(string header, string subHeader)
+    {
+        warningHeader.text = header;
+        warningSubHeader.text = subHeader;
+        StartCoroutine(FlashCoroutine(fortuneColor));
+    }
+    private IEnumerator FlashCoroutine(Color color)
     {
         float transitionDuration = 0.7f;  // The duration of each fade in/out
         float targetAlpha = 0.3f;  // The alpha value for "not so visible"
@@ -51,41 +58,41 @@ public class EventManager : MonoBehaviour
             for (float t = 0; t < transitionDuration; t += Time.deltaTime)
             {
                 float alpha = Mathf.Lerp(1f, targetAlpha, t / transitionDuration);
-                warningHeader.color = new Color(warningHeader.color.r, warningHeader.color.g, warningHeader.color.b, alpha);
-                warningSubHeader.color = new Color(warningSubHeader.color.r, warningSubHeader.color.g, warningSubHeader.color.b, alpha);
+                warningHeader.color = new Color(color.r, color.g, color.b, alpha);
+                warningSubHeader.color = new Color(color.r, color.g, color.b, alpha);
                 yield return null;
             }
 
             // Ensure the alpha is exactly the target alpha at the end of the fade out
-            warningHeader.color = new Color(warningHeader.color.r, warningHeader.color.g, warningHeader.color.b, targetAlpha);
-            warningSubHeader.color = new Color(warningSubHeader.color.r, warningSubHeader.color.g, warningSubHeader.color.b, targetAlpha);
+            warningHeader.color = new Color(color.r, color.g, color.b, targetAlpha);
+            warningSubHeader.color = new Color(color.r, color.g, color.b, targetAlpha);
 
             // Fade in
             for (float t = 0; t < transitionDuration; t += Time.deltaTime)
             {
                 float alpha = Mathf.Lerp(targetAlpha, 1f, t / transitionDuration);
-                warningHeader.color = new Color(warningHeader.color.r, warningHeader.color.g, warningHeader.color.b, alpha);
-                warningSubHeader.color = new Color(warningSubHeader.color.r, warningSubHeader.color.g, warningSubHeader.color.b, alpha);
+                warningHeader.color = new Color(color.r, color.g, color.b, alpha);
+                warningSubHeader.color = new Color(color.r, color.g, color.b, alpha);
                 yield return null;
             }
 
             // Ensure the alpha is exactly 1 at the end of the fade in
-            warningHeader.color = new Color(warningHeader.color.r, warningHeader.color.g, warningHeader.color.b, 1f);
-            warningSubHeader.color = new Color(warningSubHeader.color.r, warningSubHeader.color.g, warningSubHeader.color.b, 1f);
+            warningHeader.color = new Color(color.r, color.g, color.b, 1f);
+            warningSubHeader.color = new Color(color.r, color.g, color.b, 1f);
         }
 
         // Final fade out to invisible
         for (float t = 0; t < transitionDuration; t += Time.deltaTime)
         {
             float alpha = Mathf.Lerp(1f, 0f, t / transitionDuration);
-            warningHeader.color = new Color(warningHeader.color.r, warningHeader.color.g, warningHeader.color.b, alpha);
-            warningSubHeader.color = new Color(warningSubHeader.color.r, warningSubHeader.color.g, warningSubHeader.color.b, alpha);
+            warningHeader.color = new Color(color.r, color.g, color.b, alpha);
+            warningSubHeader.color = new Color(color.r, color.g, color.b, alpha);
             yield return null;
         }
 
         // Ensure the alpha is exactly 0 at the end of the final fade out
-            warningHeader.color = new Color(warningHeader.color.r, warningHeader.color.g, warningHeader.color.b, 0f);
-            warningSubHeader.color = new Color(warningSubHeader.color.r, warningSubHeader.color.g, warningSubHeader.color.b, 0f);
+            warningHeader.color = new Color(color.r, color.g, color.b, 0f);
+            warningSubHeader.color = new Color(color.r, color.g, color.b, 0f);
    
     }
 
@@ -145,9 +152,11 @@ public class EventManager : MonoBehaviour
             case GameEvent.RareTreasureFind:
                 // Reset the counter when a treasure event occurs
                 eventsSinceLastTreasure = 0;
+                FlashFortune("Rare Treasure", "A brief moment of respite");
                 // Trigger Rare Treasure Find event
                 break;
             case GameEvent.DimensionalRift:
+                // Trigger Dimensional Rift event
 
                 break;
         }
