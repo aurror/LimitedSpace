@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using System.Linq;
 
 public class ContainerManager : MonoBehaviour
 {
@@ -40,18 +41,13 @@ public class ContainerManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-            GetNewResourceInContainer("Iron", 1);
-        if (Input.GetKeyDown(KeyCode.R))
-            GetNewResourceInContainer("Water", 1);
-        if (Input.GetKeyDown(KeyCode.I))
-            GetNewResourceInContainer("Organic", 1);
-  
         if (Input.GetKeyDown(KeyCode.U))
-            GetNewResourceInContainer("Cable", 1);
-        if (Input.GetKeyDown(KeyCode.X))
         {
-            LooseItemAsPlayer("Iron", 1);
+            DeleteAllResourcesInShip();
+        }
+        if (Input.GetKeyDown(KeyCode.X) && !FloatingLabelController.instance.isInRange)
+        {
+            DeleteLastPlayerItem();
         }
     }
 
@@ -118,13 +114,11 @@ public class ContainerManager : MonoBehaviour
                 }
             }
         }
-        Debug.Log("get: " + currentResourcesAmountInPlayerInventory);
         DisplayPlayerResources();
         DisplayContainerResource(resource);
     }
 public void LooseItemAsPlayer(string resource, int amount)
 {
-    Debug.Log(resource + "/" + amount);
     int currentResourceAmount = 0;
     List<string> itemsToRemove = new List<string>();
     foreach (var item in playerInventoryList)
@@ -150,7 +144,6 @@ public void LooseItemAsPlayer(string resource, int amount)
         Debug.Log("Not enough " + resource);
     }
     DisplayPlayerResources();
-    Debug.Log("RemainingItems: " + currentResourcesAmountInPlayerInventory);
 }
 
 private void DisplayPlayerResources()
@@ -162,7 +155,6 @@ private void DisplayPlayerResources()
         Resource matchingResource = resourcesList.Find(res => res.resourceName == item);
         if (matchingResource != null)
         {
-            Debug.Log("DisplayPlayerRes: " + matchingResource.resourceName);
             playerInventory.transform.GetChild(displayIndex).transform.GetComponent<Image>().sprite = matchingResource.sprite;
             displayIndex++;
         }
@@ -185,5 +177,43 @@ private void DisplayPlayerResources()
         {
             playerInventory.transform.GetChild(i).transform.GetComponent<Image>().sprite = null;
         }
+    }
+
+    private void DeleteAllResourcesInShip()
+    {
+        currentResourceAmount = 0;
+        currentResourcesCounter.transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>().text = "All Resources: " + currentResourceAmount.ToString() + "/" + maxRessourceAmount;
+        foreach (Resource res in resourcesList)
+        {
+            res.amount = 0;
+            res.counter.transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>().text = (res.resourceName + ": " + res.amount.ToString());
+        }
+    }
+
+    public void DeleteSpecificResource(string resource)
+    {
+        foreach (Resource res in resourcesList)
+        {
+            if (res.resourceName == resource)
+            {
+                res.amount -= 1;
+                if (res.amount < 0)
+                {
+                    res.amount = 0;
+                    SetMaxRessources(0);
+                }
+                else
+                {
+                    SetMaxRessources(-1);
+                }
+            }
+        }
+        DisplayContainerResource(resource);
+    }
+
+    private void DeleteLastPlayerItem()
+    {
+        string res = playerInventoryList.Last();
+        LooseItemAsPlayer(res, 1);
     }
 }
