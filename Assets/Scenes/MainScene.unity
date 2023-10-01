@@ -686,6 +686,10 @@ PrefabInstance:
       value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 3453017148114193262, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453017148114193262, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2
       objectReference: {fileID: 0}
@@ -776,6 +780,10 @@ PrefabInstance:
     - target: {fileID: 8504754464501554937, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
       propertyPath: m_Size.x
       value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504754464501554937, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8504754464501554937, guid: 950c8cd432fe7554db4f61894d3f15e1, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -4205,7 +4213,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -9438,7 +9446,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -9571,6 +9579,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9159232541485813413, guid: a6206705c2a42c740aa58e78837cafe9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3855016497117117726}
+    - targetCorrespondingSourceObject: {fileID: 9159232541485813413, guid: a6206705c2a42c740aa58e78837cafe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3855016497117117727}
   m_SourcePrefab: {fileID: 100100000, guid: a6206705c2a42c740aa58e78837cafe9, type: 3}
 --- !u!4 &3855016497117117723 stripped
 Transform:
@@ -9631,10 +9642,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -34.24, y: -9.74}
+  m_Offset: {x: -34.27, y: -9.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9647,6 +9658,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.1, y: 3.82}
   m_EdgeRadius: 0
+--- !u!50 &3855016497117117727
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855016497117117724}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &3963647438000996235
 PrefabInstance:
   m_ObjectHideFlags: 0

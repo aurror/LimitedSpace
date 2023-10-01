@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Text;
 
 public class FloatingHealthBar : MonoBehaviour
 {
@@ -57,25 +58,34 @@ public class FloatingHealthBar : MonoBehaviour
         return currentHealth;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            // Assuming the trigger is a pickup item
-            FloatingLabelController.instance.ActivateLabe(true);
-            FloatingLabelController.instance.SetInRange(true);
-            FloatingLabelController.instance.SetStringObject("Need: ", myPairs[0].stringValue);
+            PlayerArrived();
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (other.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             FloatingLabelController.instance.ActivateLabe(false);
             FloatingLabelController.instance.SetInRange(false);
         }
-    }
+    }  
+    
 
+    private void PlayerArrived()
+    {
+        FloatingLabelController.instance.ActivateLabe(true);
+        FloatingLabelController.instance.SetInRange(true);
+        string allNecessaryResources = "";
+        foreach(var pair in myPairs)
+        {
+            allNecessaryResources =  allNecessaryResources + pair.stringValue + " x " + pair.intValue + "\n";
+        }
+        FloatingLabelController.instance.SetStringObject("Need: " + "\n", allNecessaryResources);
+    }
 }
 
