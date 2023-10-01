@@ -7,23 +7,63 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 10;
     public int currentHealth;
     public GameObject heartContainerPrefab;
-    public Transform healthBar;
+    private Image heartImage;
+     private Color originalColor;
+      public float colorDecreaseRate = 0.05f;  // Adjust this value to control the rate of color change
+
     public float oxygenDepletionRate = 2f;
     private bool isOxygenAvailable = true;
     
     private void Start()
     {
-        currentHealth = maxHealth;
-
+        if (heartContainerPrefab != null)
+        {
+            heartImage = heartContainerPrefab.GetComponent<Image>();
+            if (heartImage != null)
+            {
+                originalColor = heartImage.color;
+            }
+            else
+            {
+                Debug.LogError("No Image component found on heartContainerPrefab.");
+            }
+        }
+        else
+        {
+            Debug.LogError("heartContainerPrefab not assigned.");
+        }
+    }
+ private void Update()
+    {
+        if (!isOxygenAvailable && heartImage != null)
+        {
+            if (heartContainerPrefab.activeSelf == false)
+            {
+                heartContainerPrefab.SetActive(true);
+                StartCoroutine(DecreaseColorOverTime());
+            }
+        }
+        else
+        {
+            if (heartContainerPrefab.activeSelf == true)
+            {
+                heartImage.color = originalColor;
+                heartContainerPrefab.SetActive(false);
+                StopCoroutine(DecreaseColorOverTime());
+            }
+        }
     }
 
-
-
-    private void Update()
+    private IEnumerator DecreaseColorOverTime()
     {
-        if (!isOxygenAvailable)
+        while (!isOxygenAvailable && heartImage.color.r > 0 && heartImage.color.g > 0 && heartImage.color.b > 0)
         {
-            StartCoroutine(DepleteHealth());
+            Color currentColor = heartImage.color;
+            currentColor.r -= colorDecreaseRate;
+            currentColor.g -= colorDecreaseRate;
+            currentColor.b -= colorDecreaseRate;
+            heartImage.color = currentColor;
+            yield return new WaitForSeconds(1f);
         }
     }
 
@@ -44,18 +84,18 @@ public class PlayerHealth : MonoBehaviour
 
     private void UpdateHeartContainer()
     {
-        for (int i = 0; i < healthBar.childCount; i++)
-        {
-            Animator heartAnimator = healthBar.GetChild(i).GetComponent<Animator>();
-            if (i < currentHealth)
-            {
-                heartAnimator.SetTrigger("Pulsate");
-            }
-            else
-            {
-                heartAnimator.SetTrigger("FadeOut");
-            }
-        }
+        // for (int i = 0; i < healthBar.childCount; i++)
+        // {
+        //     Animator heartAnimator = healthBar.GetChild(i).GetComponent<Animator>();
+        //     if (i < currentHealth)
+        //     {
+        //         heartAnimator.SetTrigger("Pulsate");
+        //     }
+        //     else
+        //     {
+        //         heartAnimator.SetTrigger("FadeOut");
+        //     }
+        // }
     }
 
     public void RecoverOxygen()
