@@ -134,10 +134,12 @@ public class EventManager : MonoBehaviour
                 break;
             case GameEvent.SolarFlare:
                 // Trigger Solar Flare event
+                FlashWarning("! Warning !", "A solar flare is coming. Watch your energy!");
                // GetComponent<SolarFlare>().EnableEvent(Random.Range(minEventInterval,maxEventInterval));
                 break;
             case GameEvent.PirateAttack:
                 // Trigger Pirate Attack event
+                FlashWarning("! Warning !", "Pirates are approaching");
                // GetComponent<PirateAttackers>().EnableEvent(Random.Range(minEventInterval,maxEventInterval));
                 break;
             case GameEvent.RareTreasureFind:
