@@ -10,18 +10,22 @@ public class ContainerTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Assuming the trigger is a pickup item
-        FloatingLabelController.instance.ActivateLabe(true);
-        FloatingLabelController.instance.SetInRange(true);
-        FloatingLabelController.instance.SetResource(resourceKind);
-
-       
+        if(other.gameObject.tag == "Player")
+        {
+            // Assuming the trigger is a pickup item
+            FloatingLabelController.instance.ActivateLabe(true);
+            FloatingLabelController.instance.SetInRange(true);
+            FloatingLabelController.instance.SetResource(resourceKind);
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        FloatingLabelController.instance.ActivateLabe(false);
-        FloatingLabelController.instance.SetInRange(false);
+        if (other.gameObject.tag == "Player")
+        {
+            FloatingLabelController.instance.ActivateLabe(false);
+            FloatingLabelController.instance.SetInRange(false);
+        }
     }
 
  
