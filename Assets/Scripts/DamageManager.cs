@@ -10,7 +10,7 @@ public class DamageManager : MonoBehaviour
     [SerializeField] private GameObject shield;
 
     [Header("Events")]
-    [SerializeField] private string currentEvent;
+    [SerializeField] private EventManager.GameEvent currentEvent;
     [SerializeField] private List<StringIntPair> eventDamage = new List<StringIntPair>();
     [SerializeField] private int solarFlairTime;
 
@@ -40,7 +40,7 @@ public class DamageManager : MonoBehaviour
     {
         if (shipObjects.Count > 0)
         {
-            if(currentEvent == "Meteore")
+            if(currentEvent == EventManager.GameEvent.AsteroidField)
             {
                 foreach(StringIntPair pair in eventDamage)
                 {
@@ -50,7 +50,7 @@ public class DamageManager : MonoBehaviour
                     }
                 }
             }
-            if(currentEvent == "PirateAttack")
+            if(currentEvent == EventManager.GameEvent.PirateAttack)
             {
                 foreach (StringIntPair pair in eventDamage)
                 {
@@ -64,7 +64,7 @@ public class DamageManager : MonoBehaviour
         }
     }
 
-    public void SetCurrentEvent(string newEvent)
+    public void SetCurrentEvent(EventManager.GameEvent newEvent)
     {
         currentEvent = newEvent;
     }
