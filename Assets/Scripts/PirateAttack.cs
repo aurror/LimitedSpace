@@ -36,19 +36,17 @@ public class PirateAttack : MonoBehaviour
         // Calculate the direction from the capsule's head to the target object
         Vector2 directionToTarget = ship.position - gunPosition.transform.position;
 
-        // Calculate the rotation angle that makes the head point towards the target object
-        float targetRotationAngle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
 
+        // Set the object's rotation to look at the target point while keeping the head aligned
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90.0f); // -90 degrees to adjust the initial orientation
 
         // Ensure the angle stays within 360 degrees
         if (currentAngle >= 360.0f)
         {
             currentAngle -= 360.0f;
         }
-       /* Vector2 directionToShip = (ship.position - gunPosition.transform.position).normalized;
-        float angle = Mathf.Atan2(directionToShip.y, directionToShip.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        gunPosition.transform.LookAt(ship.position);*/
+ 
     }
 
 
@@ -59,13 +57,16 @@ public class PirateAttack : MonoBehaviour
             Debug.Log("Shoot");
             // Create a new projectile
             GameObject projectile = Instantiate(projectilePrefab, gunPosition.transform.position, Quaternion.identity);
+            Debug.Log(gunPosition.transform.position);
 
+            projectile.GetComponent<Rigidbody2D>().velocity = ship.position - gunPosition.transform.position * 0.5f;
+            //projectile.GetComponent<Rigidbody2D>().velocity = gunPosition.transform.position * 5.0f;
             // Set the projectile's direction towards the ship
-            Vector2 directionToPlayer = (ship.position - transform.position).normalized;
-          //  projectile.GetComponent<Rigidbody2D>().velocity = directionToPlayer * 5.0f;
+            // Vector2 directionToPlayer = (ship.position - transform.position).normalized;
+            // projectile.GetComponent<Rigidbody2D>().velocity = directionToPlayer * 5.0f;
 
             // Destroy the projectile after a certain time to avoid clutter
-           // Destroy(projectile, 2.0f);
+            // Destroy(projectile, 2.0f);
 
             yield return new WaitForSeconds(shootingInterval);
         }
