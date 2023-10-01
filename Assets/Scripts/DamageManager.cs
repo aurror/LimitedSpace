@@ -25,13 +25,7 @@ public class DamageManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.V))
         {
-            foreach (StringIntPair pair in eventDamage)
-            {
-                if (pair.stringValue == "SolarFlair")
-                {
-                    SolarFlair(solarFlairTime, pair.intValue, generator);
-                }
-            }
+            SolarFlair();
         }
   
     }
@@ -71,7 +65,8 @@ public class DamageManager : MonoBehaviour
 
     private void MeteoreEvent(GameObject gameObject, int damage)
     {
-        if(shield.GetComponent<FloatingHealthBar>().GetHealth() > 0)
+        Debug.Log("MeteoreEvent");
+        if (shield.GetComponent<FloatingHealthBar>().GetHealth() > 0)
         {
             shield.GetComponent<FloatingHealthBar>().GetDamage(damage);
 
@@ -91,14 +86,20 @@ public class DamageManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void SolarFlair(int time, int damage, GameObject gameObject)
+    public void SolarFlair()
     {
-        StartCoroutine(IncrementDamage(time, damage, gameObject));
+        foreach (StringIntPair pair in eventDamage)
+        {
+            if (pair.stringValue == "SolarFlair")
+            {
+                StartCoroutine(IncrementDamage(solarFlairTime, pair.intValue, generator));
+            }
+        }
     }
 
     IEnumerator IncrementDamage(int time, int damage, GameObject gameObject)
     {
-        while(time > 0)
+        while (time > 0)
         {
             gameObject.GetComponent<FloatingHealthBar>().GetDamage(damage);
             time -= 1;
@@ -127,3 +128,5 @@ public class DamageManager : MonoBehaviour
             Destroy(gameObject);
     }
 }
+
+        
