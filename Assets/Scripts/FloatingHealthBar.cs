@@ -10,14 +10,14 @@ public class FloatingHealthBar : MonoBehaviour
     [SerializeField] private int maxValue;
     [SerializeField] private List<StringIntPair> myPairs = new List<StringIntPair>();
 
-    private int currentHealt;
+    public int currentHealth;
     public static FloatingHealthBar instance;
 
 
     private void Awake()
     {
         instance = this;
-        currentHealt = 100;
+        currentHealth = 100;
     }
 
     private void Update()
@@ -39,32 +39,32 @@ public class FloatingHealthBar : MonoBehaviour
 
     public void GetDamage(int damage)
     {
-        currentHealt -= damage;
-        if (currentHealt < 0)
+        currentHealth -= damage;
+        if (currentHealth < 0)
         {
-            currentHealt = 0;
+            currentHealth = 0;
         }
-        UpdateHealthBar(currentHealt);
+        UpdateHealthBar(currentHealth);
     }
 
     public void GetHealth(int health)
     {
-        currentHealt += health;
-        if(currentHealt > maxValue)
+        currentHealth += health;
+        if(currentHealth > maxValue)
         {
-            currentHealt = maxValue;
+            currentHealth = maxValue;
         }
-        UpdateHealthBar(currentHealt);
+        UpdateHealthBar(currentHealth);
     }
 
     private void UpdateColor()
     {
-        if(currentHealt > 66)
+        if(currentHealth > 66)
         {
             fill.color = Color.green;
             return;
         }
-        if(currentHealt < 33)
+        if(currentHealth < 33)
         {
             fill.color = Color.red;
             return;
@@ -74,7 +74,7 @@ public class FloatingHealthBar : MonoBehaviour
 
     public float GetHealth()
     {
-        return currentHealt;
+        return currentHealth;
     }
 
 }
