@@ -45,9 +45,15 @@ public class FloatingLabelController : MonoBehaviour
         isInRange = inRange;
     }
 
-    public void SetResource(string res)
+    public void SetStringContainer( string text, string res)
     {
         resource = res;
-        floatingLabel.text = "Press [E] for " + resource;
+        floatingLabel.text = text + resource;
+    }
+
+    public void SetStringObject(string text, string res)
+    {
+        resource = res;
+        floatingLabel.text = text + resource;
     }
 }

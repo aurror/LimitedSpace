@@ -77,5 +77,25 @@ public class FloatingHealthBar : MonoBehaviour
         return currentHealth;
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            // Assuming the trigger is a pickup item
+            FloatingLabelController.instance.ActivateLabe(true);
+            FloatingLabelController.instance.SetInRange(true);
+            FloatingLabelController.instance.SetStringObject("Need: ", myPairs[0].stringValue);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            FloatingLabelController.instance.ActivateLabe(false);
+            FloatingLabelController.instance.SetInRange(false);
+        }
+    }
+
 }
 

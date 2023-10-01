@@ -15,7 +15,7 @@ public class ContainerTrigger : MonoBehaviour
             // Assuming the trigger is a pickup item
             FloatingLabelController.instance.ActivateLabe(true);
             FloatingLabelController.instance.SetInRange(true);
-            FloatingLabelController.instance.SetResource(resourceKind);
+            FloatingLabelController.instance.SetStringContainer("Press [E] for ", resourceKind);
         }
     }
 
