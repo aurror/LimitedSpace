@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class FloatingHealthBar : MonoBehaviour
 {
     [SerializeField] private Slider slider;
     [SerializeField] private Image fill;
     [SerializeField] private int maxValue;
+    [SerializeField] private List<StringIntPair> myPairs = new List<StringIntPair>();
 
     private int currentHealt;
     public static FloatingHealthBar instance;
