@@ -33,15 +33,22 @@ public class PirateAttack : MonoBehaviour
         // Rotate the enemy around the player
         currentAngle += rotationSpeed * Time.deltaTime;
 
+        // Calculate the direction from the capsule's head to the target object
+        Vector2 directionToTarget = ship.position - gunPosition.transform.position;
+
+        // Calculate the rotation angle that makes the head point towards the target object
+        float targetRotationAngle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
+
+
         // Ensure the angle stays within 360 degrees
         if (currentAngle >= 360.0f)
         {
             currentAngle -= 360.0f;
         }
-       // transform.LookAt(ship);
-        Vector2 directionToPlayer = (ship.position - gunPosition.transform.position).normalized;
-        float angle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
+       /* Vector2 directionToShip = (ship.position - gunPosition.transform.position).normalized;
+        float angle = Mathf.Atan2(directionToShip.y, directionToShip.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        gunPosition.transform.LookAt(ship.position);*/
     }
 
 
@@ -49,15 +56,16 @@ public class PirateAttack : MonoBehaviour
     {
         while (true)
         {
+            Debug.Log("Shoot");
             // Create a new projectile
             GameObject projectile = Instantiate(projectilePrefab, gunPosition.transform.position, Quaternion.identity);
 
-            // Set the projectile's direction towards the player
+            // Set the projectile's direction towards the ship
             Vector2 directionToPlayer = (ship.position - transform.position).normalized;
-            projectile.GetComponent<Rigidbody2D>().velocity = directionToPlayer * 5.0f;
+          //  projectile.GetComponent<Rigidbody2D>().velocity = directionToPlayer * 5.0f;
 
             // Destroy the projectile after a certain time to avoid clutter
-            Destroy(projectile, 2.0f);
+           // Destroy(projectile, 2.0f);
 
             yield return new WaitForSeconds(shootingInterval);
         }
