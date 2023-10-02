@@ -220,7 +220,6 @@ private void DisplayPlayerResources()
 
     public void DeleteRandomResource()
     {
-        Debug.Log("DeleteRandomResource");
         // Initialisiere einen Zufallszahlengenerator
         System.Random zufallszahlengenerator = new System.Random();
 
