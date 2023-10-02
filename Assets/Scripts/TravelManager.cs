@@ -29,8 +29,9 @@ public class TravelManager : MonoBehaviour
                 if(traveledDistance >= targetDistance){
                         // CONGRATIONALS YOU DID IT
                         finished = true;
+                        GameObject.Find("Player").GetComponent<Animator>().SetTrigger("PlayerWin");
                         Debug.Log("🍀🍀🍀FUCK YEAH YOU DID IT YOU BEAUTIFUL SHINING HUMAN🍀🍀🍀");
-                        EndScreen.SetActive(true);
+                        //EndScreen.SetActive(true);
                 }
         }
 

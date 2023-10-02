@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
      private Rigidbody2D rb;
     public Animator animator;
     public GameObject DeathScreen;
+    public GameObject EndScreen;
 
     public static Movement instance;
 
@@ -57,6 +58,13 @@ public class Movement : MonoBehaviour
     {
         Debug.Log("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
         DeathScreen.SetActive(true);
+        Cursor.visible = true;
+    }
+
+    public void startEndScreen()
+    {
+        Debug.Log("YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEAH");
+        EndScreen.SetActive(true);
         Cursor.visible = true;
     }
 }
