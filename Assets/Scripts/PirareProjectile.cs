@@ -18,9 +18,10 @@ public class PirareProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("BUM");
         // Check for collisions with other objects
         // You can implement custom behavior here, e.g., damaging an enemy on collision
-        if (other.CompareTag("Ship"))
+        if (other.CompareTag("OuterShell"))
         {
             // Handle collision with the ship
             // Example: Deal damage to the enemy

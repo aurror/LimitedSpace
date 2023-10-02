@@ -18,6 +18,8 @@ public class DamageManager : MonoBehaviour
 
     public static DamageManager instance;
 
+    private GameObject explosionPrefab;
+
     private void Awake()
     {
         instance = this;
@@ -25,6 +27,7 @@ public class DamageManager : MonoBehaviour
 
     void Start()
     {
+        explosionPrefab = Resources.Load<GameObject>("Explosion");
         shield = GameObject.Find("Shield");
         shieldHealthBar = shield.GetComponent<FloatingHealthBar>();
     }
@@ -90,7 +93,6 @@ public class DamageManager : MonoBehaviour
 
     private void MeteoreEvent(GameObject gameObject, int damage)
     {
-        Debug.Log("MeteoreEvent");
         if (shieldHealthBar.GetHealth() > 0)
         {
             shieldHealthBar.GetDamage(damage);
@@ -162,7 +164,11 @@ public class DamageManager : MonoBehaviour
         }
 
         if (gameObject.tag == "Enemy")
+        {
+            Instantiate(explosionPrefab, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
+        }
+            
     }
 }
 
