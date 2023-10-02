@@ -27,6 +27,7 @@ public class StateManagerEngine : MachineManager
         main.loop = true;
         main2.startSpeed = 10f;
         main2.loop = true;
+        travelManager.SetHealthy();
     }
     public override void OnHealthDamaged()
     {
@@ -40,6 +41,7 @@ public class StateManagerEngine : MachineManager
         var main2 = ps2.main;
         main.loop = true;
         main2.loop = true;
+        travelManager.SetDamaged();
     }
     public override void OnHealthBarelyOperable()
     {
@@ -53,6 +55,7 @@ public class StateManagerEngine : MachineManager
         var main2 = ps2.main;
         main.loop = true;
         main2.loop = true;
+        travelManager.SetKaputt();
     }
     public override void OnHealthFuckedUp()
     {
@@ -66,5 +69,6 @@ public class StateManagerEngine : MachineManager
         var main2 = ps2.main;
         main.loop = false;
         main2.loop = false;
+        travelManager.SetFuckedUp();
     }
 }

@@ -41,7 +41,7 @@ public class StateManagerShield : MachineManager
     }
     public override void OnHealthHealthy()
     {
-
+       
         currentHealthState = HealthState.Healthy;
         outerShieldPrefab.GetComponent<SpriteRenderer>().color = Color.white;
         VisualizeHealthLight();
