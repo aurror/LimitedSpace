@@ -9481,9 +9481,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2449089778120156637, guid: 6e342667be61da54fb5fdc59e31476a2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0317e7da60c43db4485df3bf737e1029, type: 3}
     - target: {fileID: 6047253989902687039, guid: 6e342667be61da54fb5fdc59e31476a2, type: 3}
       propertyPath: m_Name
       value: Signs
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146560786233066308, guid: 6e342667be61da54fb5fdc59e31476a2, type: 3}
+      propertyPath: m_text
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9024971630160296886, guid: 6e342667be61da54fb5fdc59e31476a2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9526,7 +9534,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5738392927351386193, guid: 6e342667be61da54fb5fdc59e31476a2, type: 3}
+    - {fileID: 2749639367605181485, guid: 6e342667be61da54fb5fdc59e31476a2, type: 3}
+    - {fileID: 7049092035672628114, guid: 6e342667be61da54fb5fdc59e31476a2, type: 3}
+    - {fileID: 6062306216295914420, guid: 6e342667be61da54fb5fdc59e31476a2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e342667be61da54fb5fdc59e31476a2, type: 3}
