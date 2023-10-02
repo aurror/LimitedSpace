@@ -103,7 +103,7 @@ public class FloatingHealthBar : MonoBehaviour
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Health_green"))
         {
-            sign.GetComponent<SignManager>().ActivateSignEveryThingIsFine("Everything is fine");
+            sign.GetComponent<SignManager>().ActivateSignEveryThingIsFine("Everything is fine!");
         }
 
         else
