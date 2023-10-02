@@ -23,6 +23,7 @@ public class EventManager : MonoBehaviour
     private float nextEventTime;
     private GameEvent lastEvent = GameEvent.None;
     private int eventsSinceLastTreasure = 0;
+    private int eventsSinceLastBlackHole = 0;
 
     public Color warningColor;
     public Color fortuneColor;
@@ -116,12 +117,15 @@ public class EventManager : MonoBehaviour
             GameEvent.AsteroidField,
             GameEvent.SolarFlare,
             GameEvent.PirateAttack,
-            GameEvent.DimensionalRift
         };
 
         if (eventsSinceLastTreasure >= 5)
         {
             possibleEvents.Add(GameEvent.RareTreasureFind);
+        }
+        if (eventsSinceLastBlackHole >= 4)
+        {
+            possibleEvents.Add(GameEvent.DimensionalRift);
         }
 
         // Remove the last event from possible events to avoid repetition
@@ -156,9 +160,11 @@ public class EventManager : MonoBehaviour
                 eventsSinceLastTreasure = 0;
                 FlashFortune("Rare Treasure", "A brief moment of respite");
                 // Trigger Rare Treasure Find event
+                GetComponent<TreasureEvent>().EnableEvent();
                 break;
             case GameEvent.DimensionalRift:
                 FlashWarning("! Warning !", "A black hole appears");
+                eventsSinceLastBlackHole = 0;
                 DimensionalRiftManager.instance.EnableEvent(Random.Range(minEventInterval, maxEventInterval));
 
                 break;
@@ -167,5 +173,6 @@ public class EventManager : MonoBehaviour
         lastEvent = randomEvent;  // Update the last event
         DamageManager.instance.SetCurrentEvent(lastEvent);
         eventsSinceLastTreasure++;  // Increment the counter for each event
+        eventsSinceLastBlackHole++;
     }
 }
