@@ -510,6 +510,7 @@ MonoBehaviour:
   engine: {fileID: 61879415}
   thruster1: {fileID: 747539873}
   thruster2: {fileID: 961021142}
+  lightContainer: {fileID: 0}
 --- !u!95 &73626020 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7525410033440085393, guid: 27f72a379df12464cae23bf05d2fa8f6, type: 3}
@@ -2799,7 +2800,7 @@ MonoBehaviour:
   shakeDuration: 1
   maxRotationAmount: 0.5
   eventTime: 0
-  timeBetweenShaking: 0
+  timeBetweenShaking: 2
 --- !u!114 &575237540 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3974890122109969077, guid: 383dfe014a9f07842a1d495e14851098, type: 3}
@@ -7757,11 +7758,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1916074252350927053, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1916074252350927053, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -218.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7239859443264180644, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_LocalPosition.x
