@@ -10,6 +10,7 @@ public enum HealthState {
 public class MachineManager : MonoBehaviour
 {
 
+    Color lightGreen = new Color();
     private Animator machineAnimator;
 
     protected HealthState currentHealthState;

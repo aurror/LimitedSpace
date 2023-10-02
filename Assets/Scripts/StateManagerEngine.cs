@@ -7,6 +7,7 @@ public class StateManagerEngine : MachineManager
     public GameObject thruster1;
     public GameObject thruster2;
 
+    public GameObject lightContainer;
     private HealthState currentState = HealthState.Healthy;
 
     // public float 
