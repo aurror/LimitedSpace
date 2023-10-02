@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject heartContainerPrefab;
     private Image heartImage;
      private Color originalColor;
-
+    public GameObject DeathScreen;
      private float initdelay = 0.5f;
       public float colorDecreaseRate = 0.2f;  // Adjust this value to control the rate of color change
 
@@ -67,9 +67,11 @@ public class PlayerHealth : MonoBehaviour
             {
                 // Player Dies
                 Debug.Log("Ripperonis in pepperonis");
+
                 heartContainerPrefab.GetComponent<Animator>().enabled = false;
 
                 GameObject.Find("Player").GetComponent<Movement>().enabled = false;
+                DeathScreen.SetActive(true);
                 StopCoroutine(DecreaseColorOverTime());
                 break;
             }
