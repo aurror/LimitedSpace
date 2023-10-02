@@ -9,15 +9,10 @@ public class MachineAnimatorBehaviour : StateMachineBehaviour
     const int healthHash3 = -2013558961;
     const int healthHash4 = 1983648076;
 
-    void Awake()
-    {
-        Debug.Log("Awake");
-   
-    }
+
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         MachineManager machine = animator.transform.parent.GetComponent<MachineManager>();
-        Debug.Log(stateInfo.shortNameHash);
         if (machine != null)
         {
             Animator.StringToHash("Health_green");

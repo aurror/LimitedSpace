@@ -9,7 +9,9 @@ public class PlayerHealth : MonoBehaviour
     public GameObject heartContainerPrefab;
     private Image heartImage;
      private Color originalColor;
-      public float colorDecreaseRate = 0.05f;  // Adjust this value to control the rate of color change
+
+     private float initdelay = 0.5f;
+      public float colorDecreaseRate = 0.2f;  // Adjust this value to control the rate of color change
 
     public float oxygenDepletionRate = 2f;
     private bool isOxygenAvailable = true;
@@ -56,8 +58,21 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator DecreaseColorOverTime()
     {
+        yield return new WaitForSeconds(initdelay);
         while (!isOxygenAvailable && heartImage.color.r > 0 && heartImage.color.g > 0 && heartImage.color.b > 0)
         {
+            currentHealth--;
+            
+            if (currentHealth <= 0)
+            {
+                // Player Dies
+                Debug.Log("Ripperonis in pepperonis");
+                heartContainerPrefab.GetComponent<Animator>().enabled = false;
+
+                GameObject.Find("Player").GetComponent<Movement>().enabled = false;
+                StopCoroutine(DecreaseColorOverTime());
+                break;
+            }
             Color currentColor = heartImage.color;
             currentColor.r -= colorDecreaseRate;
             currentColor.g -= colorDecreaseRate;
@@ -67,38 +82,11 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private IEnumerator DepleteHealth()
-    {
-        while (!isOxygenAvailable && currentHealth > 0)
-        {
-            yield return new WaitForSeconds(oxygenDepletionRate);
-            currentHealth--;
-            UpdateHeartContainer();
-        }
 
-        if (currentHealth <= 0)
-        {
-            // Player Dies
-        }
+    public void StartSuffocating(){
+        isOxygenAvailable = false;
     }
-
-    private void UpdateHeartContainer()
-    {
-        // for (int i = 0; i < healthBar.childCount; i++)
-        // {
-        //     Animator heartAnimator = healthBar.GetChild(i).GetComponent<Animator>();
-        //     if (i < currentHealth)
-        //     {
-        //         heartAnimator.SetTrigger("Pulsate");
-        //     }
-        //     else
-        //     {
-        //         heartAnimator.SetTrigger("FadeOut");
-        //     }
-        // }
-    }
-
-    public void RecoverOxygen()
+    public void StopSuffocating()
     {
         isOxygenAvailable = true;
         // You may want to add a coroutine to brighten the hearts before fading them out.

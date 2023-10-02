@@ -7,6 +7,7 @@ public class DamageManager : MonoBehaviour
     [Header("Ship Objects")]
     [SerializeField] private List<GameObject> shipObjects = new List<GameObject>();
     [SerializeField] private GameObject generator;
+    [SerializeField] private GameObject oxygen;
     private GameObject shield;
     private FloatingHealthBar shieldHealthBar;
 
@@ -111,6 +112,17 @@ public class DamageManager : MonoBehaviour
             //Destroy(gameObject);
     }
 
+    private Coroutine activeOxygenCoroutine;
+    public void StartOxygenDamage()
+    {
+        activeOxygenCoroutine = StartCoroutine(IncrementDamage(20, 5, oxygen));
+    }
+    public void StopOxygenDamage()
+    {
+        if (activeOxygenCoroutine != null){
+            StopCoroutine(activeOxygenCoroutine);
+        }
+    }
     public void SolarFlair()
     {
         foreach (StringIntPair pair in eventDamage)
