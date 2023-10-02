@@ -10430,6 +10430,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword
       objectReference: {fileID: 0}
+    - target: {fileID: 6921753406076355511, guid: 79d6c5f9c880d7741b5cf1664a26f0f3, type: 3}
+      propertyPath: myPairs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921753406076355511, guid: 79d6c5f9c880d7741b5cf1664a26f0f3, type: 3}
+      propertyPath: myPairs.Array.data[0].intValue
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921753406076355511, guid: 79d6c5f9c880d7741b5cf1664a26f0f3, type: 3}
+      propertyPath: myPairs.Array.data[0].stringValue
+      value: Iron
+      objectReference: {fileID: 0}
     - target: {fileID: 8913013839250240631, guid: 79d6c5f9c880d7741b5cf1664a26f0f3, type: 3}
       propertyPath: turrets.Array.size
       value: 6
