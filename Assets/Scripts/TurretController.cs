@@ -25,6 +25,10 @@ public class TurretController : MonoBehaviour
         
          AttemptToFireAtClosestEnemy();
     }
+    public void SetParams(float rate, float rotationSpeed){
+        fireRate = rate;
+        this.rotationSpeed = rotationSpeed;
+    }
    void AttemptToFireAtClosestEnemy()
     {
         if (Time.time >= lastShotTime + 1f / fireRate)

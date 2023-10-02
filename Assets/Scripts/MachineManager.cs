@@ -9,18 +9,12 @@ public enum HealthState {
 // Base class for all destroyable machines
 public class MachineManager : MonoBehaviour
 {
-    public int health;
-    public int maxHealth;
+
     private Animator machineAnimator;
 
     protected HealthState currentHealthState;
     private MonoBehaviour damageScript;  // Assign a script in the Inspector
 
-    protected virtual void Start()
-    {
-        health = maxHealth;
-         // SetHealthState();
-    }
 
 // private void Update()
 //     {
@@ -103,9 +97,5 @@ public class MachineManager : MonoBehaviour
     {
         // To be implemented in derived classes
     }
-    protected virtual void DestroyMachine()
-    {
-        // Common destroy machine logic
-        Destroy(gameObject);
-    }
+
 }
