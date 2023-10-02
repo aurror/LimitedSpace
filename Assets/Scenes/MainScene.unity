@@ -11741,6 +11741,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 6172822414670515230, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+      propertyPath: DeathScreen
+      value: 
+      objectReference: {fileID: 8875911689202993988}
     - target: {fileID: 6487112276667925535, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
       propertyPath: m_IsActive
       value: 1
