@@ -16,4 +16,15 @@ public class MainMenu : MonoBehaviour
         //SceneManager.LoadScene("CreditScene");
         Debug.Log("Pressed Credit");
     }
+
+    public void HowToPlay()
+    {
+        Debug.Log("Pressed How to Play");
+    }
+
+    public void Quit()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
 }
