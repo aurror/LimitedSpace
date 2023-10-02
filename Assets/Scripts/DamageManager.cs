@@ -31,14 +31,14 @@ public class DamageManager : MonoBehaviour
         shield = GameObject.Find("Shield");
         shieldHealthBar = shield.GetComponent<FloatingHealthBar>();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            SolarFlair(20);
-        }
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.V))
+    //     {
+    //         SolarFlair(20);
+    //     }
   
-    }
+    // }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
