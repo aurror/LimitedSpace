@@ -8553,7 +8553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365d42c9b31babd40ba1cb211930cc81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportationCoolDown: 10
+  teleportationCoolDown: 0
   teleportationActive: 1
 --- !u!1 &2011314656 stripped
 GameObject:
