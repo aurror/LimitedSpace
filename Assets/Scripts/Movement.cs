@@ -10,8 +10,9 @@ public class Movement : MonoBehaviour
     private float saveSpeed;
      private Rigidbody2D rb;
     public Animator animator;
+    public GameObject DeathScreen;
 
- void Awake()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -47,5 +48,11 @@ public class Movement : MonoBehaviour
         // Stop the animation by resetting the trigger.
         animator.ResetTrigger("Player_interact");
         // speed = saveSpeed;
+    }
+
+    public void startDeathScreen()
+    {
+        Debug.Log("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+        DeathScreen.SetActive(true);
     }
 }
