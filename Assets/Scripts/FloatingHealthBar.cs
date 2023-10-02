@@ -9,6 +9,7 @@ public class FloatingHealthBar : MonoBehaviour
 {
     [SerializeField] private int maxValue;
     [SerializeField] private List<StringIntPair> myPairs = new List<StringIntPair>();
+    [SerializeField] private GameObject sign;
 
     public int currentHealth;
     public static FloatingHealthBar instance;
@@ -77,6 +78,7 @@ public class FloatingHealthBar : MonoBehaviour
         {
             FloatingLabelController.instance.ActivateLabe(false);
             FloatingLabelController.instance.SetInRange(false);
+            sign.GetComponent<SignManager>().DeactivateSign();
             playerArrived = false;
         }
     }  
@@ -86,23 +88,39 @@ public class FloatingHealthBar : MonoBehaviour
     {
         FloatingLabelController.instance.ActivateLabe(true);
         FloatingLabelController.instance.SetInRange(true);
+
         string allNecessaryResources = "";
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Health_green"))
-            FloatingLabelController.instance.SetStringObject("Everything is fine", "");
+        {
+          //  FloatingLabelController.instance.SetStringObject("Everything is fine", "");
+            sign.GetComponent<SignManager>().ActivateSignEveryThingIsFine("Everything is fine");
+        }
+
         else
         {
             necessaryResources.Clear();
-            foreach (var pair in myPairs)
+
+            for(int i = 0; i < myPairs.Count; i++)
+            {
+                Debug.Log(i);
+                sign.GetComponent<SignManager>().SetRow(i, myPairs[i].intValue, myPairs[i].stringValue);
+                
+                for (int j = 0; j < myPairs[i].intValue; j++)
+                {
+                    Debug.Log(j);
+                    necessaryResources.Add(myPairs[i].stringValue);
+                }
+            }
+        /*    foreach (var pair in myPairs)
             {
                 allNecessaryResources = allNecessaryResources + pair.stringValue + " x " + pair.intValue + "\n";
-                for (int i = 0; i < pair.intValue; i++)
-                {
-                    necessaryResources.Add(pair.stringValue);
-                }
+               
                 
-            }
-            FloatingLabelController.instance.SetStringObject("Need: " + "\n", allNecessaryResources);
+            }*/
+            //FloatingLabelController.instance.SetStringObject("Need: " + "\n", allNecessaryResources);
+            sign.GetComponent<SignManager>().ActivateResourceSign();
+         
 
         }
     }

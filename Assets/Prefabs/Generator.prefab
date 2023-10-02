@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9189525594762858898}
   - component: {fileID: 3508275517495225276}
   - component: {fileID: 5982438646144724137}
+  - component: {fileID: 6579935250605490302}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -102,7 +103,12 @@ MonoBehaviour:
   maxValue: 100
   myPairs:
   - stringValue: Iron
+    intValue: 1
+  - stringValue: Cable
     intValue: 2
+  - stringValue: Organic
+    intValue: 1
+  sign: {fileID: 0}
   currentHealth: 0
   animator: {fileID: 9026549887562901699}
 --- !u!58 &5982438646144724137
@@ -140,6 +146,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.54}
   serializedVersion: 2
   m_Radius: 2.13
+--- !u!114 &6579935250605490302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7504378928164675578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170593d4a28ddf24c86cbc7c404acf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainLight: {fileID: 0}
+  pointLight: {fileID: 0}
 --- !u!1001 &1525347815064878418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,6 +171,14 @@ PrefabInstance:
     - target: {fileID: 7454604613880109119, guid: 27f72a379df12464cae23bf05d2fa8f6, type: 3}
       propertyPath: m_Name
       value: Health_Bar_Generator
+      objectReference: {fileID: 0}
+    - target: {fileID: 7525410033440085393, guid: 27f72a379df12464cae23bf05d2fa8f6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 54dab9dd38c6b8e4aa7700618d05d711, type: 2}
+    - target: {fileID: 8037744169425595986, guid: 27f72a379df12464cae23bf05d2fa8f6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 8344224740644422909, guid: 27f72a379df12464cae23bf05d2fa8f6, type: 3}
       propertyPath: m_LocalScale.x
