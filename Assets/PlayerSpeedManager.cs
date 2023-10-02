@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerSpeedManager : MonoBehaviour
 {
     [SerializeField] private GameObject organic;
-    private float minSpeed = 3.5f;
+    private float minSpeed = 3.9f;
     private float maxSpeed = 5f;
 
     private void Update()
