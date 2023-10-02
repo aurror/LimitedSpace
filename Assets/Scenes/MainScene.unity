@@ -8506,7 +8506,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   organic: {fileID: 2032813101}
-  minSpeed: 3.5
 --- !u!1 &1696206077
 GameObject:
   m_ObjectHideFlags: 0
@@ -8758,6 +8757,46 @@ PrefabInstance:
     - target: {fileID: 1868780715687310529, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024519327767570574, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024519327767570574, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024519327767570574, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024519327767570574, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024519327767570574, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 16.600006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024519327767570574, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 95.29999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585437652278157695, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585437652278157695, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585437652278157695, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585437652278157695, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 8411848390821913387, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_Pivot.x
@@ -11808,6 +11847,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 6172822414670515230, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+      propertyPath: EndScreen
+      value: 
+      objectReference: {fileID: 275192887}
     - target: {fileID: 6172822414670515230, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
       propertyPath: DeathScreen
       value: 
