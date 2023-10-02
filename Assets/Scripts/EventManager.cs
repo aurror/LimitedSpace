@@ -133,7 +133,7 @@ public class EventManager : MonoBehaviour
         {
             possibleEvents.Add(GameEvent.RareTreasureFind);
         }
-        if (eventsSinceLastBlackHole >= 4)
+        if (eventsSinceLastBlackHole >= 3)
         {
             possibleEvents.Add(GameEvent.DimensionalRift);
         }

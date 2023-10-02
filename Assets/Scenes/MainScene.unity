@@ -6815,11 +6815,11 @@ MonoBehaviour:
   currentEvent: 0
   eventDamage:
   - stringValue: Meteore
-    intValue: 5
+    intValue: 7
   - stringValue: SolarFlair
-    intValue: 2
+    intValue: 3
   - stringValue: PirateAttack
-    intValue: 1
+    intValue: 2
   solarFlairTime: 20
   solarFlare: {fileID: 9914330}
 --- !u!68 &1375809423
@@ -8312,6 +8312,7 @@ GameObject:
   - component: {fileID: 1685612205}
   - component: {fileID: 1685612206}
   - component: {fileID: 1685612207}
+  - component: {fileID: 1685612208}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -8478,6 +8479,19 @@ MonoBehaviour:
   controlButtonButton: {fileID: 2204686260523772157}
   control: {fileID: 2204686260523772160}
   menu: {fileID: 2204686260523772159}
+--- !u!114 &1685612208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685612197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e18e277feed26b4d9713f16ca58fbe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  organic: {fileID: 2032813101}
 --- !u!1 &1696206077
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,8 +12,11 @@ public class Movement : MonoBehaviour
     public Animator animator;
     public GameObject DeathScreen;
 
+    public static Movement instance;
+
     void Awake()
     {
+        instance = this;
         rb = GetComponent<Rigidbody2D>();
     }
 
