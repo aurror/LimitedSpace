@@ -14,6 +14,11 @@ public class LeverInteraction : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log("Collision with Lever");
-        anim.Play("leverAnimation");
+        anim.SetTrigger("LeverTrigger");
+    }
+
+    public void stopAnimation()
+    {
+        anim.ResetTrigger("LeverTrigger");
     }
 }
