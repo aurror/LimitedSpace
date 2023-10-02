@@ -71,7 +71,8 @@ public class PlayerHealth : MonoBehaviour
                 heartContainerPrefab.GetComponent<Animator>().enabled = false;
 
                 GameObject.Find("Player").GetComponent<Movement>().enabled = false;
-                DeathScreen.SetActive(true);
+                GameObject.Find("Player").GetComponent<Animator>().SetTrigger("PlayerDeath");
+                //DeathScreen.SetActive(true);
                 StopCoroutine(DecreaseColorOverTime());
                 break;
             }
