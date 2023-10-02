@@ -25,7 +25,7 @@ public class FloatingHealthBar : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        currentHealth = 100;
+        // currentHealth = 100;
         playerArrived = false;
         canGetDamage = true;
     }

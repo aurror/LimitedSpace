@@ -13117,6 +13117,10 @@ PrefabInstance:
       propertyPath: maxValue
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 2580269647816621856, guid: 5a4203756963d164ebb101ba3ec893a2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 351becaed6e2b9c41a67fc877bcc45e6, type: 2}
     - target: {fileID: 2681228577165742599, guid: 5a4203756963d164ebb101ba3ec893a2, type: 3}
       propertyPath: m_Name
       value: Shield
