@@ -17,6 +17,9 @@ public class TravelManager : MonoBehaviour
         private float badderTravelDistance = 0f;
 
         public GameObject EndScreen;
+        public Parallax parallaxBack;
+        public Parallax parallaxFront;
+        public Parallax parallaxMid;
 
         void Update(){
                 if (!finished){
@@ -37,17 +40,29 @@ public class TravelManager : MonoBehaviour
         }
         public void SetHealthy(){
                 currentTravelSpeed = goodTravelDistance;
+                parallaxBack.speed = 0.3f / 1f;
+                parallaxFront.speed = 0.2f / 1f;
+                parallaxMid.speed = 0.4f / 1f;
         }
 
         public void SetDamaged(){
                 currentTravelSpeed = damagedTravelDistance;
+                parallaxBack.speed = damagedTravelDistance * 0.3f;
+                parallaxFront.speed = damagedTravelDistance * 0.2f;
+                parallaxMid.speed = damagedTravelDistance * 0.4f;
         }
 
         public void SetKaputt(){
                 currentTravelSpeed = badTravelDistance;
+                parallaxBack.speed = badTravelDistance * 0.3f;
+                parallaxFront.speed = badTravelDistance * 0.2f;
+                parallaxMid.speed = badTravelDistance * 0.4f;
         }
 
         public void SetFuckedUp(){
                 currentTravelSpeed = badderTravelDistance;
+                parallaxBack.speed = badderTravelDistance * 0.3f;
+                parallaxFront.speed = badderTravelDistance * 0.2f;
+                parallaxMid.speed = badderTravelDistance * 0.4f;
         }
 }

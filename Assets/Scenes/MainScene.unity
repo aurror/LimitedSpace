@@ -1628,6 +1628,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &322808025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5578210776322936297, guid: ce82a3d6cabee6147ac711eeacfc282c, type: 3}
+  m_PrefabInstance: {fileID: 2040383579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7aff230dddd5b24eb3e22fa02a18080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &335405327
 GameObject:
   m_ObjectHideFlags: 0
@@ -8434,6 +8445,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressBar: {fileID: 1787524242}
   EndScreen: {fileID: 275192887}
+  parallaxBack: {fileID: 1745780187}
+  parallaxFront: {fileID: 322808025}
+  parallaxMid: {fileID: 2004651416}
 --- !u!114 &1685612205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8708,6 +8722,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fc339ae16249b543b13eb3897e6421d, type: 3}
+--- !u!114 &1745780187 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6916145685440272791, guid: ce82a3d6cabee6147ac711eeacfc282c, type: 3}
+  m_PrefabInstance: {fileID: 2040383579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7aff230dddd5b24eb3e22fa02a18080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1778067944 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4896686486193004381, guid: b016c606fc6c30847a96975b166f651c, type: 3}
@@ -9734,6 +9759,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportationCoolDown: 0
   teleportationActive: 1
+--- !u!114 &2004651416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3168852140607779748, guid: ce82a3d6cabee6147ac711eeacfc282c, type: 3}
+  m_PrefabInstance: {fileID: 2040383579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7aff230dddd5b24eb3e22fa02a18080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2011314656 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 389409517320210065, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
@@ -9919,6 +9955,7 @@ GameObject:
   - component: {fileID: 2032813102}
   - component: {fileID: 2032813104}
   - component: {fileID: 2032813105}
+  - component: {fileID: 2032813106}
   m_Layer: 0
   m_Name: organicStation
   m_TagString: Untagged
@@ -10051,6 +10088,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.12}
   serializedVersion: 2
   m_Radius: 0.73
+--- !u!114 &2032813106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032813101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d00eea1b9d4b54c9df5f638af06f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealthState: 0
+  oxygen: {fileID: 3855016497117117727}
 --- !u!1001 &2035407108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11362,6 +11413,7 @@ MonoBehaviour:
   currentHealthState: 0
   playerHealth: {fileID: 1685612202}
   lightContainer: {fileID: 249047430}
+  organic: {fileID: 2032813106}
 --- !u!1001 &3963647438000996235
 PrefabInstance:
   m_ObjectHideFlags: 0
