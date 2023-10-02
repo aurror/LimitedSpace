@@ -10658,6 +10658,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2090236969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 548670857812800352, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+  m_PrefabInstance: {fileID: 4978113247502537022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2090890619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8344224740644422909, guid: 27f72a379df12464cae23bf05d2fa8f6, type: 3}
@@ -11761,6 +11766,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1524659640890324304, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 650
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524659640890324304, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524659640890324304, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524659640890324304, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193467580409220318, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+      propertyPath: m_margin.z
+      value: -40.456177
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193467580409220318, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193467580409220318, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2986983729143451159, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
@@ -11796,6 +11829,14 @@ PrefabInstance:
     - target: {fileID: 7896163604339456254, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047549827135451368, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+      propertyPath: backgroundImage
+      value: 
+      objectReference: {fileID: 2090236969}
+    - target: {fileID: 8513313644374595250, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -836
       objectReference: {fileID: 0}
     - target: {fileID: 9064369849422593343, guid: 5e241a1ff94447f449c9e8fe31247b43, type: 3}
       propertyPath: m_Camera
