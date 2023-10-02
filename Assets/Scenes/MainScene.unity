@@ -3239,7 +3239,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.39
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -10411,6 +10411,10 @@ PrefabInstance:
     - target: {fileID: 4227052838364755851, guid: 6e342667be61da54fb5fdc59e31476a2, type: 3}
       propertyPath: m_SortingOrder
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788953117011615426, guid: 6e342667be61da54fb5fdc59e31476a2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6047253989902687039, guid: 6e342667be61da54fb5fdc59e31476a2, type: 3}
       propertyPath: m_Name
