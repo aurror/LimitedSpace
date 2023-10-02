@@ -8506,6 +8506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   organic: {fileID: 2032813101}
+  minSpeed: 3.5
 --- !u!1 &1696206077
 GameObject:
   m_ObjectHideFlags: 0
