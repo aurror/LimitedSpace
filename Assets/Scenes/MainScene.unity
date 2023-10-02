@@ -407,6 +407,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 709054674}
     - target: {fileID: 5517638933350158805, guid: 8f94c033a6a27c24bb4dd61432b138a2, type: 3}
+      propertyPath: currentHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517638933350158805, guid: 8f94c033a6a27c24bb4dd61432b138a2, type: 3}
       propertyPath: myPairs.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -10314,7 +10318,7 @@ MonoBehaviour:
   - stringValue: Organic
     intValue: 2
   sign: {fileID: 2035407112}
-  currentHealth: 0
+  currentHealth: 100
   immunityTime: 5
   animator: {fileID: 73626020}
 --- !u!58 &2032813105
@@ -11865,7 +11869,7 @@ MonoBehaviour:
   - stringValue: Organic
     intValue: 1
   sign: {fileID: 2035407113}
-  currentHealth: 0
+  currentHealth: 100
   immunityTime: 5
   animator: {fileID: 1223325960}
 --- !u!61 &3855016497117117726
@@ -13330,6 +13334,10 @@ PrefabInstance:
       propertyPath: maxValue
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 1616887070502782762, guid: 5a4203756963d164ebb101ba3ec893a2, type: 3}
+      propertyPath: currentHealth
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 2580269647816621856, guid: 5a4203756963d164ebb101ba3ec893a2, type: 3}
       propertyPath: m_Controller
       value: 
@@ -13504,6 +13512,10 @@ PrefabInstance:
       propertyPath: sign
       value: 
       objectReference: {fileID: 2035407111}
+    - target: {fileID: 6921753406076355511, guid: 79d6c5f9c880d7741b5cf1664a26f0f3, type: 3}
+      propertyPath: currentHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6921753406076355511, guid: 79d6c5f9c880d7741b5cf1664a26f0f3, type: 3}
       propertyPath: myPairs.Array.size
       value: 2
