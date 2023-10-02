@@ -11,13 +11,13 @@ public class MachineAnimatorBehaviour : StateMachineBehaviour
 
     void Awake()
     {
-        Debug.Log("Awake");
+       // Debug.Log("Awake");
    
     }
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         MachineManager machine = animator.transform.parent.GetComponent<MachineManager>();
-        Debug.Log(stateInfo.shortNameHash);
+        //Debug.Log(stateInfo.shortNameHash);
         if (machine != null)
         {
             Animator.StringToHash("Health_green");

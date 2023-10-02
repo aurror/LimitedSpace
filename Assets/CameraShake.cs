@@ -8,9 +8,12 @@ public class CameraShake : MonoBehaviour
     public float shakeDuration = 0.5f; // The duration of the camera shake
     public float maxRotationAmount = 10f; // The maximum rotation amount during the shake
     public float eventTime;
+    public float timeBetweenShaking;
 
     private Quaternion originalRotation; // The original rotation of the camera
     private float shakeTimer = 0f; // Timer for the shake
+    private float storeTimeBetweenShaking = 0;
+    private float storeEventTime = 0;
 
     public static CameraShake instance;
 
@@ -33,24 +36,39 @@ public class CameraShake : MonoBehaviour
 
     private void Update()
     {
-        // If the timer is greater than 0, shake the camera's rotation
-        if (shakeTimer > 0)
+        if(storeEventTime > 0)
         {
-            // Create a random rotation within the specified range
-            float randomRotation = Random.Range(-maxRotationAmount, maxRotationAmount);
+            // If the timer is greater than 0, shake the camera's rotation
+            if (shakeTimer > 0)
+            {
+                // Create a random rotation within the specified range
+                float randomRotation = Random.Range(-maxRotationAmount, maxRotationAmount);
 
-            // Apply the random rotation to the camera's rotation
-            cameraTransform.rotation = originalRotation * Quaternion.Euler(0f, 0f, randomRotation);
+                // Apply the random rotation to the camera's rotation
+                cameraTransform.rotation = originalRotation * Quaternion.Euler(0f, 0f, randomRotation);
 
-            // Reduce the timer
-            shakeTimer -= Time.deltaTime;
+                // Reduce the timer
+                shakeTimer -= Time.deltaTime;
+            }
+            else
+            {
+                Debug.Log("timeBetweenShaking: " + timeBetweenShaking);
+                // If the timer has expired, reset the camera's rotation
+                shakeTimer = 0f;
+                cameraTransform.rotation = originalRotation;
+                if(timeBetweenShaking > 0)
+                {
+                    timeBetweenShaking -= Time.deltaTime;
+                }
+                else
+                {
+                    shakeTimer = shakeDuration;
+                    timeBetweenShaking = storeTimeBetweenShaking;
+                }
+            }
+            storeEventTime -= Time.deltaTime;
         }
-        else
-        {
-            // If the timer has expired, reset the camera's rotation
-            shakeTimer = 0f;
-            cameraTransform.rotation = originalRotation;
-        }
+       
 
         // Trigger the camera shake (e.g., on a specific event)
         if (Input.GetKeyDown(KeyCode.Space))
@@ -63,6 +81,9 @@ public class CameraShake : MonoBehaviour
     public void StartShake()
     {
         shakeTimer = shakeDuration;
-    
+        storeTimeBetweenShaking = timeBetweenShaking;
+        storeEventTime = eventTime;
+
+
     }
 }

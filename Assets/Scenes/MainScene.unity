@@ -3240,8 +3240,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 558029008}
   shakeDuration: 1
-  maxRotationAmount: 0.5
-  eventTime: 0
+  maxRotationAmount: 0.7
+  eventTime: 10
+  timeBetweenShaking: 2
 --- !u!1 &603041657
 GameObject:
   m_ObjectHideFlags: 0
