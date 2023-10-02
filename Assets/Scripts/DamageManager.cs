@@ -31,14 +31,14 @@ public class DamageManager : MonoBehaviour
         shield = GameObject.Find("Shield");
         shieldHealthBar = shield.GetComponent<FloatingHealthBar>();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            SolarFlair(20);
-        }
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.V))
+    //     {
+    //         SolarFlair(20);
+    //     }
   
-    }
+    // }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -106,8 +106,10 @@ public class DamageManager : MonoBehaviour
             StopCoroutine(activeOxygenCoroutine);
         }
     }
+    public GameObject solarFlare;
     public void SolarFlair(float time)
     {
+        solarFlare.SetActive(true);
         foreach (StringIntPair pair in eventDamage)
         {
             if (pair.stringValue == "SolarFlair")
@@ -125,6 +127,7 @@ public class DamageManager : MonoBehaviour
             time -= 1;
             yield return new WaitForSeconds(1.0f);
         }
+        solarFlare.SetActive(false);
     }
 
     public void EnemyAttack(GameObject gameObject, int damage)

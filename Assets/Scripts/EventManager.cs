@@ -15,6 +15,7 @@ public class EventManager : MonoBehaviour
         DimensionalRift
     }
 
+
     TextMeshProUGUI warningHeader;
     TextMeshProUGUI warningSubHeader;
     public float minEventInterval = 15f;
@@ -125,6 +126,7 @@ public class EventManager : MonoBehaviour
                 {
                     // make pirates more likely if the player has no cable
                     possibleEvents.Add(GameEvent.PirateAttack);
+                    break;
                 }
             }
         if (eventsSinceLastTreasure >= 5)
@@ -155,6 +157,7 @@ public class EventManager : MonoBehaviour
             case GameEvent.SolarFlare:
                 // Trigger Solar Flare event
                 FlashWarning("! Warning !", "A solar flare is coming. Watch your energy!");
+                
                 DamageManager.instance.SolarFlair(Random.Range(minEventInterval, maxEventInterval));
                 CameraShake.instance.StartShake(Random.Range(minEventInterval, maxEventInterval));
                 break;
