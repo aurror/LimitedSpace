@@ -217,4 +217,32 @@ private void DisplayPlayerResources()
         string res = playerInventoryList.Last();
         LooseItemAsPlayer(res, 1);
     }
+
+    public void DeleteRandomResource()
+    {
+        Debug.Log("DeleteRandomResource");
+        // Initialisiere einen Zufallszahlengenerator
+        System.Random zufallszahlengenerator = new System.Random();
+
+        // Wähle ein zufälliges Element aus der Liste aus
+        int zufälligerIndex = zufallszahlengenerator.Next(0, resourcesList.Count);
+        string randomResource = resourcesList[zufälligerIndex].name;
+        foreach (Resource res in resourcesList)
+        {
+            if (res.resourceName == randomResource)
+            {
+                res.amount -= 1;
+                if (res.amount < 0)
+                {
+                    res.amount = 0;
+                    SetMaxRessources(0);
+                }
+                else
+                {
+                    SetMaxRessources(-1);
+                }
+            }
+        }
+        DisplayContainerResource(randomResource);
+    }
 }

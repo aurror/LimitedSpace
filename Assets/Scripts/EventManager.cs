@@ -115,7 +115,8 @@ public class EventManager : MonoBehaviour
         {
             GameEvent.AsteroidField,
             GameEvent.SolarFlare,
-            GameEvent.PirateAttack
+            GameEvent.PirateAttack,
+            GameEvent.DimensionalRift
         };
 
         if (eventsSinceLastTreasure >= 5)
@@ -157,7 +158,8 @@ public class EventManager : MonoBehaviour
                 // Trigger Rare Treasure Find event
                 break;
             case GameEvent.DimensionalRift:
-                // Trigger Dimensional Rift event
+                FlashWarning("! Warning !", "A black hole appears");
+                DimensionalRiftManager.instance.EnableEvent(Random.Range(minEventInterval, maxEventInterval));
 
                 break;
         }

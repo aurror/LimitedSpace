@@ -52,7 +52,6 @@ public class CameraShake : MonoBehaviour
             }
             else
             {
-                Debug.Log("timeBetweenShaking: " + timeBetweenShaking);
                 // If the timer has expired, reset the camera's rotation
                 shakeTimer = 0f;
                 cameraTransform.rotation = originalRotation;
