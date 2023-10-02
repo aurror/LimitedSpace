@@ -54,5 +54,6 @@ public class Movement : MonoBehaviour
     {
         Debug.Log("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
         DeathScreen.SetActive(true);
+        Cursor.visible = true;
     }
 }
