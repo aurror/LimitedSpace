@@ -180,7 +180,7 @@ private void DisplayPlayerResources()
         }
     }
 
-    private void DeleteAllResourcesInShip()
+    public void DeleteAllResourcesInShip()
     {
         currentResourceAmount = 0;
         currentResourcesCounter.transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>().text = currentResourceAmount.ToString() + "/" + maxRessourceAmount;
@@ -214,8 +214,12 @@ private void DisplayPlayerResources()
 
     private void DeleteLastPlayerItem()
     {
-        string res = playerInventoryList.Last();
-        LooseItemAsPlayer(res, 1);
+        if(playerInventoryList.Count > 0)
+        {
+            string res = playerInventoryList.Last();
+            LooseItemAsPlayer(res, 1);
+        }
+
     }
 
     public void DeleteRandomResource()
