@@ -10,10 +10,13 @@ public enum HealthState {
 public class MachineManager : MonoBehaviour
 {
 
-    Color lightGreen = new Color();
+    protected Color lightGreen = new Color(0,255 / 255f,36/255f);
+    protected Color lightYellow = new Color(1,255 / 255f,0 /255f);
+    protected Color lightRed = new Color(1,36 / 255f,36 /255f);
+    protected Color lightDead = new Color(1,0 / 255f,0 /255f);
     private Animator machineAnimator;
 
-    protected HealthState currentHealthState;
+    public HealthState currentHealthState;
     private MonoBehaviour damageScript;  // Assign a script in the Inspector
 
 
