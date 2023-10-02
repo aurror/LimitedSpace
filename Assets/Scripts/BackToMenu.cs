@@ -8,5 +8,6 @@ public class BackToMenu : MonoBehaviour {
     {
         //SceneManager.LoadScene("CreditScene");
          SceneManager.LoadScene("Menu");
+        Cursor.visible = true;
     }
 }

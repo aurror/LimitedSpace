@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
 
     void PauseGame()
     {
+        Cursor.visible = true;
         Time.timeScale = 0f; // Pause the game by setting the time scale to zero.
         isPaused = true;
         pauseMenu.SetActive(true);
@@ -47,6 +48,7 @@ public class PauseMenu : MonoBehaviour
 
     void ResumeGame()
     {
+        Cursor.visible = false;
         Time.timeScale = 1f; // Resume the game by setting the time scale back to one.
         isPaused = false;
         pauseMenu.SetActive(false);
