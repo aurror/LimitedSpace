@@ -155,7 +155,7 @@ public class FloatingHealthBar : MonoBehaviour
             {
                 ContainerManager.instance.LooseItemAsPlayer(res, 1);
             }
-            GetHealth(100);
+            GetHealth(3000);
         }
 
 
