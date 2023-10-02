@@ -6,6 +6,7 @@ public class LeverInteraction : MonoBehaviour
 {
     private Animator anim;
     private bool playerInRange;
+    [SerializeField] private string message = "Throw all resources from the ship";
 
     void Start()
     {
@@ -17,18 +18,10 @@ public class LeverInteraction : MonoBehaviour
     {
         if (playerInRange)
         {
-
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (playerInRange)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                
+                ContainerManager.instance.DeleteAllResourcesInShip();
             }
-        }
-        if (playerInRange)
-        {
-
         }
     }
 
@@ -41,7 +34,7 @@ public class LeverInteraction : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerInRange = true;
+            playerInRange = false;
             FloatingLabelController.instance.ActivateLabe(false);
             FloatingLabelController.instance.SetInRange(false);
             anim.SetTrigger("LeverTrigger");
@@ -52,10 +45,10 @@ public class LeverInteraction : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerInRange = false;
+            playerInRange = true;
             // Assuming the trigger is a pickup item
             FloatingLabelController.instance.ActivateLabe(true);
-            FloatingLabelController.instance.SetInRange(true);
+            FloatingLabelController.instance.SetText(message);
         }
     }
 }

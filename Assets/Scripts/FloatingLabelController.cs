@@ -62,4 +62,9 @@ public class FloatingLabelController : MonoBehaviour
         floatingLabel.text = text + resource;
     }
 
+    public void SetText(string text)
+    {
+        floatingLabel.text = text;
+    }
+
 }
