@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4435916445801040346}
   - component: {fileID: 276152671761839492}
   - component: {fileID: 5508393884763453335}
+  - component: {fileID: -3643373603508116057}
   m_Layer: 0
   m_Name: cat
   m_TagString: Untagged
@@ -121,6 +122,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3643373603508116057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42752341814244113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bc3ea74e82e6f469e2678d471784ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: Cat is collecting resources for you <3
 --- !u!1 &8203368967995996516
 GameObject:
   m_ObjectHideFlags: 0
