@@ -27,14 +27,6 @@ public class FloatingHealthBar : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            GetDamage(5);
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            GetHealth(5);
-        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (playerArrived)
