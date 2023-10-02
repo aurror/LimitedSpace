@@ -16,7 +16,7 @@ public class MachineManager : MonoBehaviour
     protected Color lightDead = new Color(1,0 / 255f,0 /255f);
     private Animator machineAnimator;
 
-    protected HealthState currentHealthState;
+    public HealthState currentHealthState;
     private MonoBehaviour damageScript;  // Assign a script in the Inspector
 
 

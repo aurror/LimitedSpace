@@ -4,9 +4,13 @@ using UnityEngine;
 public class StateManagerWeapons : MachineManager
 {
     public List<TurretController> turrets = new List<TurretController>();
-    private HealthState currentState = HealthState.Healthy;
+
+    public StateManagerShield shield;
+
+
     public override void OnHealthHealthy()
     {
+        currentHealthState = HealthState.Healthy;
         foreach (var turret in turrets)
         {
             var turretComponents = turret.GetComponentsInChildren<SpriteRenderer>();
@@ -17,13 +21,16 @@ public class StateManagerWeapons : MachineManager
             
             turret.SetParams(0.42f, 180f);
         }
+        shield.VisualizeHealthLight();
     }
     public override void OnHealthDamaged()
     {
-
+        currentHealthState = HealthState.Damaged;
+        shield.VisualizeHealthLight();
     }
     public override void OnHealthBarelyOperable()
     {
+        currentHealthState = HealthState.BarelyOperable;
         foreach (var turret in turrets)
         {
             var turretComponents = turret.GetComponentsInChildren<SpriteRenderer>();
@@ -33,9 +40,11 @@ public class StateManagerWeapons : MachineManager
             }
             turret.SetParams(0.3f, 90f);
         }
+        shield.VisualizeHealthLight();
     }
     public override void OnHealthFuckedUp()
     {
+        currentHealthState = HealthState.FuckedUp;
         foreach (var turret in turrets)
         {
             var turretComponents = turret.GetComponentsInChildren<SpriteRenderer>();
@@ -45,5 +54,6 @@ public class StateManagerWeapons : MachineManager
             }
             turret.SetParams(0f, 0f);
         }
+        shield.VisualizeHealthLight();
     }
 }
