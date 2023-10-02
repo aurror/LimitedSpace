@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class StateManagerEngine : MachineManager
 {
@@ -16,6 +17,11 @@ public class StateManagerEngine : MachineManager
     {
         ParticleSystem ps = thruster1.GetComponent<ParticleSystem>();
         ParticleSystem ps2 = thruster2.GetComponent<ParticleSystem>();
+        var sprite = lightContainer.GetComponentInChildren<SpriteRenderer>();
+        var light = lightContainer.GetComponentInChildren<Light2D>();
+        sprite.color = lightGreen;
+        light.color = lightGreen;
+        
         var main = ps.main;
         var main2 = ps2.main;
         main.startSpeed = 10f;
@@ -27,6 +33,10 @@ public class StateManagerEngine : MachineManager
     {
         ParticleSystem ps = thruster1.GetComponent<ParticleSystem>();
         ParticleSystem ps2 = thruster2.GetComponent<ParticleSystem>();
+        var sprite = lightContainer.GetComponentInChildren<SpriteRenderer>();
+        var light = lightContainer.GetComponentInChildren<Light2D>();
+        sprite.color = lightYellow;
+        light.color = lightYellow;
         var main = ps.main;
         var main2 = ps2.main;
         main.loop = true;
@@ -36,6 +46,10 @@ public class StateManagerEngine : MachineManager
     {
         ParticleSystem ps = thruster1.GetComponent<ParticleSystem>();
         ParticleSystem ps2 = thruster2.GetComponent<ParticleSystem>();
+        var sprite = lightContainer.GetComponentInChildren<SpriteRenderer>();
+        var light = lightContainer.GetComponentInChildren<Light2D>();
+        sprite.color = lightRed;
+        light.color = lightRed;
         var main = ps.main;
         var main2 = ps2.main;
         main.loop = true;
@@ -45,6 +59,10 @@ public class StateManagerEngine : MachineManager
     {
         ParticleSystem ps = thruster1.GetComponent<ParticleSystem>();
         ParticleSystem ps2 = thruster2.GetComponent<ParticleSystem>();
+        var sprite = lightContainer.GetComponentInChildren<SpriteRenderer>();
+        var light = lightContainer.GetComponentInChildren<Light2D>();
+        sprite.color = lightDead;
+        light.color = lightDead;
         var main = ps.main;
         var main2 = ps2.main;
         main.loop = false;

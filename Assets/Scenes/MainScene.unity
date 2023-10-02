@@ -510,6 +510,7 @@ MonoBehaviour:
   engine: {fileID: 61879415}
   thruster1: {fileID: 747539873}
   thruster2: {fileID: 961021142}
+  lightContainer: {fileID: 425752102}
 --- !u!95 &73626020 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7525410033440085393, guid: 27f72a379df12464cae23bf05d2fa8f6, type: 3}
@@ -2408,6 +2409,11 @@ SpriteRenderer:
 Transform:
   m_CorrespondingSourceObject: {fileID: 362253836768228822, guid: 383dfe014a9f07842a1d495e14851098, type: 3}
   m_PrefabInstance: {fileID: 992341957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &425752102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2371198367662407667, guid: d878f69bf64f9ef4ea03329c401ea7e5, type: 3}
+  m_PrefabInstance: {fileID: 4721770405994876198}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &468720567
 GameObject:
