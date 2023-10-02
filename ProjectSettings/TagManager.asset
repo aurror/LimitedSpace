@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Ship
   - Asteroid
+  - OuterShell
   layers:
   - Default
   - TransparentFX
