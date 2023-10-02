@@ -23,6 +23,7 @@ public class Teleportation : MonoBehaviour
             {
                 player.GetComponent<PlayerTeleportationManagement>().ManageCooldown();
                 player.GetComponent<Transform>().position = destination.GetComponent<Transform>().position;
+                GetComponent<AudioSource>().Play();
                 DeaktivatePortal(destination);
             }
         }
