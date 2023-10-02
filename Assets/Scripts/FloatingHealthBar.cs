@@ -76,8 +76,8 @@ public class FloatingHealthBar : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            FloatingLabelController.instance.ActivateLabe(false);
-            FloatingLabelController.instance.SetInRange(false);
+           // FloatingLabelController.instance.ActivateLabe(false);
+            //FloatingLabelController.instance.SetInRange(false);
             sign.GetComponent<SignManager>().DeactivateSign();
             playerArrived = false;
         }
@@ -86,8 +86,8 @@ public class FloatingHealthBar : MonoBehaviour
 
     private void PlayerArrived()
     {
-        FloatingLabelController.instance.ActivateLabe(true);
-        FloatingLabelController.instance.SetInRange(true);
+        //FloatingLabelController.instance.ActivateLabe(true);
+        //FloatingLabelController.instance.SetInRange(true);
 
         string allNecessaryResources = "";
 
