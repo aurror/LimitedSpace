@@ -29,11 +29,8 @@ public class TractorBeamCollector : MonoBehaviour
                 gameObject.transform.parent.GetComponent<Animator>().enabled = false;
                 gameObject.transform.localScale = new Vector3(1.5f,1.5f,1);
                 isWorking = false;
-            }
-            
-            
+            }      
         }
-        
     }
 
 void CollectResources()

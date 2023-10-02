@@ -35,7 +35,7 @@ public class DamageManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.V))
         {
-            SolarFlair();
+            SolarFlair(20);
         }
   
     }
@@ -44,16 +44,7 @@ public class DamageManager : MonoBehaviour
     {
         if (shipObjects.Count > 0)
         {
-            // if(currentEvent == EventManager.GameEvent.AsteroidField)
-            // {
-            //     foreach(StringIntPair pair in eventDamage)
-            //     {
-            //         if(pair.stringValue == "Meteore")
-            //         {
-            //             MeteoreEvent(collision.gameObject, pair.intValue);
-            //         }
-            //     }
-            // }
+
             if (collision.gameObject.name.Contains("Asteroid")){
                 foreach(StringIntPair pair in eventDamage)
                 {
@@ -72,16 +63,6 @@ public class DamageManager : MonoBehaviour
                     }
                 }
             }
-            // if(currentEvent == EventManager.GameEvent.PirateAttack)
-            // {
-            //     foreach (StringIntPair pair in eventDamage)
-            //     {
-            //         if (pair.stringValue == "PirateAttack")
-            //         {
-            //             EnemyAttack(collision.gameObject, pair.intValue);
-            //         }
-            //     }
-            // }
 
         }
     }
@@ -125,18 +106,18 @@ public class DamageManager : MonoBehaviour
             StopCoroutine(activeOxygenCoroutine);
         }
     }
-    public void SolarFlair()
+    public void SolarFlair(float time)
     {
         foreach (StringIntPair pair in eventDamage)
         {
             if (pair.stringValue == "SolarFlair")
             {
-                StartCoroutine(IncrementDamage(solarFlairTime, pair.intValue, generator));
+                StartCoroutine(IncrementDamage(time, pair.intValue, generator));
             }
         }
     }
 
-    IEnumerator IncrementDamage(int time, int damage, GameObject gameObject)
+    IEnumerator IncrementDamage(float time, int damage, GameObject gameObject)
     {
         while (time > 0)
         {

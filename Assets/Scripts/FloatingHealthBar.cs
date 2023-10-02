@@ -12,11 +12,14 @@ public class FloatingHealthBar : MonoBehaviour
     [SerializeField] private GameObject sign;
 
     public int currentHealth;
+    public float immunityTime = 5;
     public static FloatingHealthBar instance;
     public Animator animator;
 
     private List<string> necessaryResources = new List<string>();
     private bool playerArrived;
+
+    private bool canGetDamage;
 
 
     private void Awake()
@@ -24,6 +27,7 @@ public class FloatingHealthBar : MonoBehaviour
         instance = this;
         currentHealth = 100;
         playerArrived = false;
+        canGetDamage = true;
     }
 
     private void Update()
@@ -41,11 +45,15 @@ public class FloatingHealthBar : MonoBehaviour
 
     public void GetDamage(int damage)
     {
-        currentHealth -= damage;
-        if (currentHealth < 0)
+        if (canGetDamage)
         {
-            currentHealth = 0;
+            currentHealth -= damage;
+            if (currentHealth < 0)
+            {
+                currentHealth = 0;
+            }
         }
+   
     }
 
     public void GetHealth(int health)
@@ -54,9 +62,16 @@ public class FloatingHealthBar : MonoBehaviour
         if(currentHealth > maxValue)
         {
             currentHealth = maxValue;
+            canGetDamage = false;
+            StartCoroutine(Timer(immunityTime));
         }
     }
 
+    private IEnumerator Timer(float time)
+    {
+        yield return new WaitForSeconds(time);
+        canGetDamage = true;
+    }
 
     public float GetHealth()
     {
@@ -76,8 +91,6 @@ public class FloatingHealthBar : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-           // FloatingLabelController.instance.ActivateLabe(false);
-            //FloatingLabelController.instance.SetInRange(false);
             sign.GetComponent<SignManager>().DeactivateSign();
             playerArrived = false;
         }
@@ -86,14 +99,9 @@ public class FloatingHealthBar : MonoBehaviour
 
     private void PlayerArrived()
     {
-        //FloatingLabelController.instance.ActivateLabe(true);
-        //FloatingLabelController.instance.SetInRange(true);
-
-        string allNecessaryResources = "";
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Health_green"))
         {
-          //  FloatingLabelController.instance.SetStringObject("Everything is fine", "");
             sign.GetComponent<SignManager>().ActivateSignEveryThingIsFine("Everything is fine");
         }
 
@@ -112,13 +120,6 @@ public class FloatingHealthBar : MonoBehaviour
                     necessaryResources.Add(myPairs[i].stringValue);
                 }
             }
-        /*    foreach (var pair in myPairs)
-            {
-                allNecessaryResources = allNecessaryResources + pair.stringValue + " x " + pair.intValue + "\n";
-               
-                
-            }*/
-            //FloatingLabelController.instance.SetStringObject("Need: " + "\n", allNecessaryResources);
             sign.GetComponent<SignManager>().ActivateResourceSign();
          
 
