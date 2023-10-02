@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FloatingLabelController : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class FloatingLabelController : MonoBehaviour
     public TMP_Text floatingLabel;  // Drag your TextMesh Pro UGUI Text here
     public float heightOffset = 2.0f;  // Adjust this to position the label above your character
     public bool isInRange = false;
+    public GameObject backgroundImage;
 
     private string resource;
 
@@ -38,6 +40,7 @@ public class FloatingLabelController : MonoBehaviour
 
     public void ActivateLabe(bool aktivate)
     {
+        backgroundImage.SetActive(aktivate);
         floatingLabel.gameObject.SetActive(aktivate);
         if (!aktivate)
         {
