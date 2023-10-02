@@ -8665,7 +8665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1868780715687310529, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1868780715687310529, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8673,7 +8673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1868780715687310529, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1868780715687310529, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_AnchorMin.y
@@ -8681,11 +8681,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1868780715687310529, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.33
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 1868780715687310529, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1868780715687310529, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8697,11 +8697,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1868780715687310529, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -180.6
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 1868780715687310529, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -141.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1868780715687310529, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -8876,7 +8876,7 @@ PrefabInstance:
     - {fileID: 8768018263786992983, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8411848390821913387, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
-      insertIndex: 5
+      insertIndex: -1
       addedObject: {fileID: 275192886}
     - targetCorrespondingSourceObject: {fileID: 8411848390821913387, guid: b8ee4926802b5774bb21c2c93039e6b3, type: 3}
       insertIndex: -1
