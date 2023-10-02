@@ -7,7 +7,8 @@ public class DamageManager : MonoBehaviour
     [Header("Ship Objects")]
     [SerializeField] private List<GameObject> shipObjects = new List<GameObject>();
     [SerializeField] private GameObject generator;
-    [SerializeField] private GameObject shield;
+    private GameObject shield;
+    private FloatingHealthBar shieldHealthBar;
 
     [Header("Events")]
     [SerializeField] private EventManager.GameEvent currentEvent;
@@ -21,6 +22,11 @@ public class DamageManager : MonoBehaviour
         instance = this;
     }
 
+    void Start()
+    {
+        shield = GameObject.Find("Shield");
+        shieldHealthBar = shield.GetComponent<FloatingHealthBar>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.V))
@@ -84,9 +90,9 @@ public class DamageManager : MonoBehaviour
     private void MeteoreEvent(GameObject gameObject, int damage)
     {
         Debug.Log("MeteoreEvent");
-        if (shield.GetComponent<FloatingHealthBar>().GetHealth() > 0)
+        if (shieldHealthBar.GetHealth() > 0)
         {
-            shield.GetComponent<FloatingHealthBar>().GetDamage(damage);
+            shieldHealthBar.GetDamage(damage);
 
         }
         else
@@ -128,9 +134,9 @@ public class DamageManager : MonoBehaviour
 
     public void EnemyAttack(GameObject gameObject, int damage)
     {
-        if (shield.GetComponent<FloatingHealthBar>().GetHealth() > 0)
+        if (shieldHealthBar.GetHealth() > 0)
         {
-            shield.GetComponent<FloatingHealthBar>().GetDamage(damage);
+            shieldHealthBar.GetDamage(damage);
         }
         else
         {
