@@ -24,7 +24,7 @@ public class FloatingLabelController : MonoBehaviour
         // Position the label above the character
         Vector3 labelPosition = characterTransform.position;
         labelPosition.y += heightOffset;
-        floatingLabel.transform.position = Camera.main.WorldToScreenPoint(labelPosition);
+        //floatingLabel.transform.position = Camera.main.WorldToScreenPoint(labelPosition);
 
         // Check for player input
         if (isInRange && Input.GetKeyDown(KeyCode.E))
