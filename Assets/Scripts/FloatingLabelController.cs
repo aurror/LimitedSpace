@@ -50,10 +50,10 @@ public class FloatingLabelController : MonoBehaviour
         isInRange = inRange;
     }
 
-    public void SetStringContainer( string text, string res)
+    public void SetStringContainer(string res)
     {
         resource = res;
-        floatingLabel.text = text + resource;
+        floatingLabel.text = $"{resource} resource \n [E] Collect \n [X] Delete";
     }
 
     public void SetStringObject(string text, string res)

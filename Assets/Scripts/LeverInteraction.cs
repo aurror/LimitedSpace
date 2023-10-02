@@ -6,7 +6,7 @@ public class LeverInteraction : MonoBehaviour
 {
     private Animator anim;
     private bool playerInRange;
-    [SerializeField] private string message = "Throw all resources from the ship";
+    [SerializeField] private string message = "[x] Eject Current Inventory";
 
     void Start()
     {
@@ -21,6 +21,7 @@ public class LeverInteraction : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 ContainerManager.instance.DeleteAllResourcesInShip();
+                anim.SetTrigger("LeverTrigger");
             }
         }
     }
@@ -37,7 +38,6 @@ public class LeverInteraction : MonoBehaviour
             playerInRange = false;
             FloatingLabelController.instance.ActivateLabe(false);
             FloatingLabelController.instance.SetInRange(false);
-            anim.SetTrigger("LeverTrigger");
         }
     }
 
