@@ -24,7 +24,7 @@ public class TravelManager : MonoBehaviour
                         Debug.Log("🍀🍀🍀FUCK YEAH YOU DID IT YOU BEAUTIFUL SHINING HUMAN🍀🍀🍀");
                         EndScreen.SetActive(true);
                 }
-                }
+        }
 
         }
         public void SetHealthy(){
