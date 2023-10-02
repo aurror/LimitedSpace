@@ -48,10 +48,6 @@ public class ContainerManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            DeleteAllResourcesInShip();
-        }
         if (Input.GetKeyDown(KeyCode.X) && !FloatingLabelController.instance.isInRange)
         {
             DeleteLastPlayerItem();

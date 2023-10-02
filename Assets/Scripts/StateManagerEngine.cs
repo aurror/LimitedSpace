@@ -9,10 +9,9 @@ public class StateManagerEngine : MachineManager
     public GameObject thruster2;
 
     public GameObject lightContainer;
-    private HealthState currentState = HealthState.Healthy;
 
-    // public float 
-    private float currentTravelDistance = 0f;
+    public TravelManager travelManager;
+
     public override void OnHealthHealthy()
     {
         ParticleSystem ps = thruster1.GetComponent<ParticleSystem>();
