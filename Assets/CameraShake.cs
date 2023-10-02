@@ -7,7 +7,6 @@ public class CameraShake : MonoBehaviour
     public Transform cameraTransform; // The camera's Transform component
     public float shakeDuration = 0.5f; // The duration of the camera shake
     public float maxRotationAmount = 10f; // The maximum rotation amount during the shake
-    public float eventTime;
     public float timeBetweenShaking;
 
     private Quaternion originalRotation; // The original rotation of the camera
@@ -20,6 +19,15 @@ public class CameraShake : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    private void FixedUpdate()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartShake(10);
+        }
     }
 
     private void Start()
@@ -68,20 +76,15 @@ public class CameraShake : MonoBehaviour
             storeEventTime -= Time.deltaTime;
         }
        
-
-        // Trigger the camera shake (e.g., on a specific event)
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartShake();
-        }
     }
 
     // Start the camera shake
-    public void StartShake()
+    public void StartShake(float time)
     {
+        Debug.Log("Start Shake");
         shakeTimer = shakeDuration;
         storeTimeBetweenShaking = timeBetweenShaking;
-        storeEventTime = eventTime;
+        storeEventTime = time;
 
 
     }
