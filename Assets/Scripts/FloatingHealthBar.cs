@@ -93,6 +93,7 @@ public class FloatingHealthBar : MonoBehaviour
         {
             sign.GetComponent<SignManager>().DeactivateSign();
             playerArrived = false;
+            FloatingLabelController.instance.ActivateLabe(false);
         }
     }  
     
@@ -144,11 +145,12 @@ public class FloatingHealthBar : MonoBehaviour
         if (!hasAllResources)
         {
             Debug.Log("Not Enough Resources");
+            FloatingLabelController.instance.ActivateLabe(true);
+            FloatingLabelController.instance.SetText("Not Enough Resources");
 
         }
         else
         {
-            Debug.Log("Deleting " + necessaryResources.Count + " Resources");
             foreach (string res in necessaryResources)
             {
                 ContainerManager.instance.LooseItemAsPlayer(res, 1);
