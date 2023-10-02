@@ -22,7 +22,7 @@ public class ContainerManager : MonoBehaviour
 
 
     [Header("Resources")]
-    [SerializeField] private List<Resource> resourcesList = new List<Resource>();
+    public List<Resource> resourcesList = new List<Resource>();
 
     [NonSerialized]
     public int currentResourceAmount;
@@ -38,6 +38,12 @@ public class ContainerManager : MonoBehaviour
         instance = this;
         canAddResourceToContainer = true;
         SetMaxRessources(0);
+    }
+    void Start(){
+        GetNewResourceInContainer("Cable", 4);
+        GetNewResourceInContainer("Organic", 3);
+        GetNewResourceInContainer("Iron", 4);
+        GetNewResourceInContainer("Water", 2);
     }
 
     private void Update()
@@ -227,9 +233,9 @@ private void DisplayPlayerResources()
         // Initialisiere einen Zufallszahlengenerator
         System.Random zufallszahlengenerator = new System.Random();
 
-        // Wähle ein zufälliges Element aus der Liste aus
-        int zufälligerIndex = zufallszahlengenerator.Next(0, resourcesList.Count);
-        string randomResource = resourcesList[zufälligerIndex].name;
+        // Wï¿½hle ein zufï¿½lliges Element aus der Liste aus
+        int zufaelligerIndex = zufallszahlengenerator.Next(0, resourcesList.Count);
+        string randomResource = resourcesList[zufaelligerIndex].name;
         foreach (Resource res in resourcesList)
         {
             if (res.resourceName == randomResource)

@@ -118,7 +118,15 @@ public class EventManager : MonoBehaviour
             GameEvent.SolarFlare,
             GameEvent.PirateAttack,
         };
+        foreach(Resource res in ContainerManager.instance.resourcesList)
+            {
 
+                if(res.resourceName == "Cable" && res.amount == 0)
+                {
+                    // make pirates more likely if the player has no cable
+                    possibleEvents.Add(GameEvent.PirateAttack);
+                }
+            }
         if (eventsSinceLastTreasure >= 5)
         {
             possibleEvents.Add(GameEvent.RareTreasureFind);
@@ -163,7 +171,7 @@ public class EventManager : MonoBehaviour
                 GetComponent<TreasureEvent>().EnableEvent();
                 break;
             case GameEvent.DimensionalRift:
-                FlashWarning("! Warning !", "A black hole appears");
+                FlashWarning("! Warning !", "Black holes are appearing");
                 eventsSinceLastBlackHole = 0;
                 DimensionalRiftManager.instance.EnableEvent(Random.Range(minEventInterval, maxEventInterval));
 
