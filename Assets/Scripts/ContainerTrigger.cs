@@ -23,7 +23,7 @@ public class ContainerTrigger : MonoBehaviour
             // Assuming the trigger is a pickup item
             FloatingLabelController.instance.ActivateLabe(true);
             FloatingLabelController.instance.SetInRange(true);
-            FloatingLabelController.instance.SetStringContainer("Get ", resourceKind);
+            FloatingLabelController.instance.SetStringContainer(resourceKind);
         }
     }
 
